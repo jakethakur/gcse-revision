@@ -18,6 +18,8 @@ var rocket = {
 	x: canvas.width/2,
 	y: 100,
 	
+	speed: 0.5, //rate of falling
+	
 	imageSize: {
 		x: 53,
 		y: 91,
@@ -49,6 +51,8 @@ function pickQuestion() {
 	questionTopic = "hardware";
 	questionNumber = randomNum(questions.hardware.length);
 	document.getElementById("question").innerHTML = questions[questionTopic][questionNumber].question;
+	//reset input
+	document.getElementById("answer").value = null;
 }
 
 //generate random number between 0 and upper limit (upper limit will never be reached)
@@ -61,10 +65,28 @@ function randomNum(upper) {
 
 //verify user's answer is correct
 function verifyAnswer() {
-	if(document.getElementById("answer").value == questions[questionTopic][questionNumber].answer) {
-		//correct answer
+	//exact answer
+	if(document.getElementById("answer").value == questions[questionTopic][questionNumber].answer && questions[questionTopic][questionNumber].answerType == "exact") {
 		questionCorrect = true;
+		rocket.currentPicture = rocket.picture2;
 		height += Math.round((canvas.height - rocket.y) / (canvas.height / 100));
+		pickQuestion();
+	}
+	//keyword answer
+	else if(questions[questionTopic][questionNumber].answerType == "match") {
+		var timesScored = 0; //answers correct
+		for(var i = 0; i < questions[questionTopic][questionNumber].answer.length; i++) {
+			if(document.getElementById("answer").value.includes(questions[questionTopic][questionNumber].answer[i])) {
+				timesScored++;
+			}
+		}
+		console.log(timesScored);
+		if(timesScored >= questions[questionTopic][questionNumber].required) {
+			height += (Math.round((canvas.height - rocket.y) / (canvas.height / 100))) * (timesScored + 1 - questions[questionTopic][questionNumber].required);
+			questionCorrect = true;
+			rocket.currentPicture = rocket.picture2;
+			pickQuestion();
+		}
 	}
 }
 
@@ -90,12 +112,13 @@ function update() {
 
 //move rocket
 function move() {
-	rocket.y++;
+	rocket.y += rocket.speed;
 	
 	if(questionCorrect) {
 		rocket.y -= 5
 		if(rocket.y < 100) {
 			questionCorrect = false;
+			rocket.currentPicture = rocket.picture1;
 		}
 	}
 }
