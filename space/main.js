@@ -7,10 +7,10 @@ var height = 0; //score
 
 var questionCorrect = false; //is the rocket currently moving upwards?
 
-//import questions from json file
+//import questions from json file (imported for speed)
 var questions = data;
 //address of current question
-var questionTopic = null; 
+var questionTopic = topics[randomNum(topics.length)]; 
 var questionNumber = null;
 
 //define player object
@@ -48,9 +48,18 @@ var canvasColour = "#d1f3ff";
 
 //pick a new question
 function pickQuestion() {
-	questionTopic = "hardware";
-	questionNumber = randomNum(questions.hardware.length);
-	document.getElementById("question").innerHTML = questions[questionTopic][questionNumber].question;
+	//questionTopic = "hardware";
+	questionTopic = topics[randomNum(topics.length)];
+	//chance of giving a boolean logic question instead of a pre-written question
+	if(questionTopic == "logic" && randomNum(2) == 0) {
+		var booleanLogic = booleanQuestion(4);
+		document.getElementById("question").innerHTML = "Evaluate: " + booleanLogic.question;
+		questionNumber = "bool" + booleanLogic.answer;
+	}
+	else {
+		questionNumber = randomNum(questions[questionTopic].length);
+		document.getElementById("question").innerHTML = questions[questionTopic][questionNumber].question;
+	}
 	//reset input
 	document.getElementById("answer").value = null;
 }
@@ -63,10 +72,88 @@ function randomNum(upper) {
 	return bar;
 }
 
+/*for(var i = 2; i < 6; i++) {
+	booleanQuestion(i)
+}*/
+
+function booleanQuestion(items) {
+	var operators = [" AND "," OR "," XOR "];
+	var operatorsJs = ["&","|","^"];
+	
+	var question = "";
+	var questionEval = "";
+	
+	var unclosedBracket = 0;
+	
+	for(var i = 0; i < items; i++) {
+		//not (currently broken)
+		/*if(randomNum(3) == 0) {
+			question += "NOT";
+			questionEval += "~";
+		}*/
+		
+		//brackets
+		if(randomNum(2) == 0 && unclosedBracket == 0 && i < items - 1) {
+			question += "(";
+			questionEval += "(";
+			unclosedBracket = 2;
+		}
+		
+		//value (0 or 1)
+		if(randomNum(2) == 0) {
+			question += "0";
+			questionEval += "0";
+		}
+		else {
+			question += "1";
+			questionEval += "1";
+		}
+		
+		//close unclosed bracket
+		if(unclosedBracket == 1) {
+			question += ")";
+			questionEval += ")";
+		}
+		
+		unclosedBracket--;
+		
+		//boolean operator
+		if(i < items - 1) {
+			var foo = randomNum(operators.length);
+			question += operators[foo];
+			questionEval += operatorsJs[foo];
+		}
+		
+		//finished
+		if(i == items - 1) {
+			/*console.log(question);
+			console.log(questionEval);
+			console.log(eval(questionEval));
+			console.log("");*/
+			
+			return({
+				question: question,
+				answer: eval(questionEval),
+			});
+		}
+	}
+}
+
 //verify user's answer is correct
 function verifyAnswer() {
+	//boolean question
+	if(questionNumber.includes("bool")) {
+		questionNumber = questionNumber.slice(4); //remove the "bool" before the answer
+		console.log(questionNumber);
+		if(document.getElementById("answer").value == questionNumber) {
+			questionCorrect = true;
+			rocket.currentPicture = rocket.picture2;
+			height += Math.round((canvas.height - rocket.y) / (canvas.height / 100));
+			pickQuestion();
+		}
+	}
 	//exact answer
-	if(document.getElementById("answer").value.toLowerCase() == questions[questionTopic][questionNumber].answer && questions[questionTopic][questionNumber].answerType == "exact") {
+	else if(document.getElementById("answer").value.toLowerCase() == questions[questionTopic][questionNumber].answer && questions[questionTopic][questionNumber].answerType == "exact") {
 		questionCorrect = true;
 		rocket.currentPicture = rocket.picture2;
 		height += Math.round((canvas.height - rocket.y) / (canvas.height / 100));

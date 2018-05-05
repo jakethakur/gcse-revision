@@ -93,5 +93,41 @@ var data  = {
 			answerType: "match",
 			required: 1,
 		},
-	]
-}
+		{
+			question: "How is data transferred between the memory and the CPU?",
+			answer: ["bus"],
+			answerType: "match",
+			required: 1,
+		},
+	],
+	logic: [
+		{
+			question: "What is the hardware's logic controlled by?",
+			answer: ["logic gate"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which logic gate is represented by: <img src='./assets/and.png'>? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
+			answer: ["a"],
+			answerType: "exact",
+		},
+		{
+			question: "Which logic gate is represented by: <img src='./assets/or.png'>? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
+			answer: ["b"],
+			answerType: "exact",
+		},
+		{
+			question: "Which logic gate is represented by: <img src='./assets/not.png'>? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
+			answer: ["c"],
+			answerType: "exact",
+		},
+		{
+			question: "Which logic gate is represented by: <img src='./assets/xor.png'? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
+			answer: ["d"],
+			answerType: "exact",
+		},
+	],
+};
+
+var topics = ["hardware","logic"];
