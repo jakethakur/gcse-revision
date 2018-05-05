@@ -142,7 +142,7 @@ function booleanQuestion(items) {
 //verify user's answer is correct
 function verifyAnswer() {
 	//boolean question
-	if(questionNumber.includes("bool")) {
+	if(questionNumber.toString().includes("bool")) {
 		questionNumber = questionNumber.slice(4); //remove the "bool" before the answer
 		console.log(questionNumber);
 		if(document.getElementById("answer").value == questionNumber) {
