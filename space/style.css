@@ -1,0 +1,8 @@
+#game {
+    border: 1px solid black;
+	float: left;
+}
+
+#answerPane {
+	padding-left: 320px;
+}
