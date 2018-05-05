@@ -6,3 +6,11 @@
 #answerPane {
 	padding-left: 320px;
 }
+
+h2 { 
+	font-weight: normal;
+}
+
+body {
+	font-family: sans-serif;
+}

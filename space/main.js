@@ -66,7 +66,7 @@ function randomNum(upper) {
 //verify user's answer is correct
 function verifyAnswer() {
 	//exact answer
-	if(document.getElementById("answer").value == questions[questionTopic][questionNumber].answer && questions[questionTopic][questionNumber].answerType == "exact") {
+	if(document.getElementById("answer").value.toLowerCase() == questions[questionTopic][questionNumber].answer && questions[questionTopic][questionNumber].answerType == "exact") {
 		questionCorrect = true;
 		rocket.currentPicture = rocket.picture2;
 		height += Math.round((canvas.height - rocket.y) / (canvas.height / 100));
@@ -76,7 +76,7 @@ function verifyAnswer() {
 	else if(questions[questionTopic][questionNumber].answerType == "match") {
 		var timesScored = 0; //answers correct
 		for(var i = 0; i < questions[questionTopic][questionNumber].answer.length; i++) {
-			if(document.getElementById("answer").value.includes(questions[questionTopic][questionNumber].answer[i])) {
+			if(document.getElementById("answer").value.toLowerCase().includes(questions[questionTopic][questionNumber].answer[i])) {
 				timesScored++;
 			}
 		}
@@ -87,6 +87,16 @@ function verifyAnswer() {
 			rocket.currentPicture = rocket.picture2;
 			pickQuestion();
 		}
+	}
+}
+
+//verify answer on enter keypress
+document.addEventListener("keydown", checkKeyPress, false);
+
+function checkKeyPress(event) {
+var keyCode = event.keyCode;
+	if(keyCode == 13) { //enter keypress
+		verifyAnswer();
 	}
 }
 
