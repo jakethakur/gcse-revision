@@ -60,7 +60,8 @@ function pickQuestion() {
 	
 	//data questions are special...
 	else if(questionTopic == "data") {
-		var random = randomNum(4); //number of possible question types
+		//var random = randomNum(5); //number of possible question types
+		var random = 4;
 		var foo;
 		var question;
 		var answer;
@@ -86,9 +87,14 @@ function pickQuestion() {
 				question = "Hexadecimal to denary: " + foo.hex;
 				answer = foo.denary;
 				break;
+			case 4: //add binary
+				foo = addBinary(randomNum(6), randomNum(6));
+				question = "Add the binary values: " + foo.binary1 + " and " + foo.binary2;
+				answer = foo.answer;
+				break;
 			default: //error
 				console.error("random number out of bounds");
-				question = "Error";
+				question = "Error - please open an issue!";
 				answer = "continue";
 		}
 		
@@ -225,6 +231,31 @@ function denaryToHex(denaryDigits) { //2
 	return({
 		denary: denary,
 		hex: hex,
+	});
+}
+
+//make binary addition question - part of data
+function addBinary(binaryDigits1, binaryDigits2) {
+	//build binary number 1
+	var binary1 = "1";
+	for(var i = 1; i < binaryDigits1; i++) {
+		binary1 += randomNum(2);
+	}
+	
+	//build binary number 2
+	var binary2 = "1";
+	for(var i = 1; i < binaryDigits2; i++) {
+		binary2 += randomNum(2);
+	}
+	
+	//add the two binary values
+	var answer = (parseInt(binary1, 2) + parseInt(binary2, 2)).toString(2);
+	
+	//return
+	return({
+		binary1: binary1,
+		binary2: binary2,
+		answer: answer,
 	});
 }
 
