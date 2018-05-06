@@ -151,6 +151,9 @@ function verifyAnswer() {
 			height += Math.round((canvas.height - rocket.y) / (canvas.height / 100));
 			pickQuestion();
 		}
+		else {
+			questionNumber = "bool" + questionNumber;
+		}
 	}
 	//exact answer
 	else if(document.getElementById("answer").value.toLowerCase() == questions[questionTopic][questionNumber].answer && questions[questionTopic][questionNumber].answerType == "exact") {
