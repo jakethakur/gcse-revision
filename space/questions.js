@@ -123,7 +123,7 @@ var data  = {
 			answerType: "exact",
 		},
 		{
-			question: "Which logic gate is represented by: <img src='./assets/xor.png'? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
+			question: "Which logic gate is represented by: <img src='./assets/xor.png'>? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
 			answer: ["d"],
 			answerType: "exact",
 		},
