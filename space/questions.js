@@ -1,3 +1,5 @@
+var topics = ["hardware","logic","data"];
+
 var data  = {
 	hardware: [
 		{
@@ -101,6 +103,7 @@ var data  = {
 		},
 	],
 	logic: [
+	//also includes evaluation of boolean statements
 		{
 			question: "What is the hardware's logic controlled by?",
 			answer: ["logic gate"],
@@ -129,5 +132,3 @@ var data  = {
 		},
 	],
 };
-
-var topics = ["hardware","logic"];

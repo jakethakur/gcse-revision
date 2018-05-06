@@ -48,18 +48,60 @@ var canvasColour = "#d1f3ff";
 
 //pick a new question
 function pickQuestion() {
-	//questionTopic = "hardware";
+	//select random topic
 	questionTopic = topics[randomNum(topics.length)];
+	
 	//chance of giving a boolean logic question instead of a pre-written question
 	if(questionTopic == "logic" && randomNum(2) == 0) {
 		var booleanLogic = booleanQuestion(4);
 		document.getElementById("question").innerHTML = "Evaluate: " + booleanLogic.question;
 		questionNumber = "bool" + booleanLogic.answer;
 	}
+	
+	//data questions are special...
+	else if(questionTopic == "data") {
+		var random = randomNum(4); //number of possible question types
+		var foo;
+		var question;
+		var answer;
+		
+		switch(random) {
+			case 0: //denary to binary
+				foo = binaryToDenary(5);
+				question = "Denary to binary: " + foo.denary;
+				answer = foo.binary;
+				break;
+			case 1: //binary to denary
+				foo = binaryToDenary(5);
+				question = "Binary to denary: " + foo.binary;
+				answer = foo.denary;
+				break;
+			case 2: //denary to hex
+				foo = denaryToHex(2);
+				question = "Denary to hexadecimal: " + foo.denary;
+				answer = foo.hex;
+				break;
+			case 3: //hex to denary
+				foo = denaryToHex(2);
+				question = "Hexadecimal to denary: " + foo.hex;
+				answer = foo.denary;
+				break;
+			default: //error
+				console.error("random number out of bounds");
+				question = "Error";
+				answer = "continue";
+		}
+		
+		document.getElementById("question").innerHTML = question;
+		questionNumber = answer;
+	}
+	
+	//get a question from questions.js
 	else {
 		questionNumber = randomNum(questions[questionTopic].length);
 		document.getElementById("question").innerHTML = questions[questionTopic][questionNumber].question;
 	}
+	
 	//reset input
 	document.getElementById("answer").value = null;
 }
@@ -76,6 +118,7 @@ function randomNum(upper) {
 	booleanQuestion(i)
 }*/
 
+//make evaluate boolean statement question - part of logic
 function booleanQuestion(items) {
 	var operators = [" AND "," OR "," XOR "];
 	var operatorsJs = ["&","|","^"];
@@ -139,12 +182,58 @@ function booleanQuestion(items) {
 	}
 }
 
+//make binary to denary question - part of data
+function binaryToDenary(binaryDigits) { //5
+	//build binary number
+	var binary = "1";
+	for(var i = 1; i < binaryDigits; i++) {
+		binary += randomNum(2);
+	}
+	//binary = parseInt(binary);
+	
+	console.log(binary);
+	
+	//convert to denary
+	var denary = parseInt(binary, 2);
+	
+	console.log(denary);
+	
+	//return
+	return({
+		binary: binary,
+		denary: denary,
+	});
+}
+
+//make denary to hex question - part of data
+function denaryToHex(denaryDigits) { //2
+	//build denary number
+	var denary = "";
+	for(var i = 0; i < denaryDigits; i++) {
+		var random = randomNum(10);
+		while(denary.length == 0 && random == 0) {
+			random = randomNum(10);
+		}
+		denary += random.toString();
+	}
+	denary = parseInt(denary);
+	
+	//convert to hex
+	var hex = denary.toString(16);
+	
+	//return
+	return({
+		denary: denary,
+		hex: hex,
+	});
+}
+
 //verify user's answer is correct
 function verifyAnswer() {
 	//boolean question
 	if(questionNumber.toString().includes("bool")) {
 		questionNumber = questionNumber.slice(4); //remove the "bool" before the answer
-		console.log(questionNumber);
+		//console.log(questionNumber);
 		if(document.getElementById("answer").value == questionNumber) {
 			questionCorrect = true;
 			rocket.currentPicture = rocket.picture2;
@@ -155,6 +244,17 @@ function verifyAnswer() {
 			questionNumber = "bool" + questionNumber;
 		}
 	}
+	
+	//data question
+	else if(questionTopic == "data") {
+		if(document.getElementById("answer").value == questionNumber) {
+			questionCorrect = true;
+			rocket.currentPicture = rocket.picture2;
+			height += Math.round((canvas.height - rocket.y) / (canvas.height / 100));
+			pickQuestion();
+		}
+	}
+	
 	//exact answer
 	else if(document.getElementById("answer").value.toLowerCase() == questions[questionTopic][questionNumber].answer && questions[questionTopic][questionNumber].answerType == "exact") {
 		questionCorrect = true;
@@ -162,6 +262,7 @@ function verifyAnswer() {
 		height += Math.round((canvas.height - rocket.y) / (canvas.height / 100));
 		pickQuestion();
 	}
+	
 	//keyword answer
 	else if(questions[questionTopic][questionNumber].answerType == "match") {
 		var timesScored = 0; //answers correct
