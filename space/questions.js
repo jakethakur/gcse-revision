@@ -1,3 +1,10 @@
+//make sure the answers are all in lower case
+
+//user answers are not case sensitive
+//exact question: user must enter the exact answer - answer must be a string
+//match question: user must enter the answer word within their answer - answer must be an array
+//required: number of keywords required for match question (any over this they are given extra points for)
+
 var topics = ["hardware","logic","data"];
 
 var data  = {
@@ -112,23 +119,83 @@ var data  = {
 		},
 		{
 			question: "Which logic gate is represented by: <img src='./assets/and.png'>? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
-			answer: ["a"],
+			answer: "a",
 			answerType: "exact",
 		},
 		{
 			question: "Which logic gate is represented by: <img src='./assets/or.png'>? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
-			answer: ["b"],
+			answer: "b",
 			answerType: "exact",
 		},
 		{
 			question: "Which logic gate is represented by: <img src='./assets/not.png'>? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
-			answer: ["c"],
+			answer: "c",
 			answerType: "exact",
 		},
 		{
 			question: "Which logic gate is represented by: <img src='./assets/xor.png'>? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
-			answer: ["d"],
+			answer: "d",
 			answerType: "exact",
+		},
+	],
+	data: [
+	//also includes hex, binary, denary conversion, addition of binary
+		{
+			question: "What is the measurement of sampling rate?",
+			answer: ["hertz"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which <strong>three</strong> factors affect file size of a sound file?",
+			answer: ["length", "sample rate", "resolution"],
+			answerType: "match",
+			required: 3,
+		},
+		{
+			question: "Which factors can affect quality of a sound file's playback? <i>more answers give you more points</i>",
+			answer: ["sample rate", "resolution"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Find the file size of a sound file that is 10 seconds long, has a 150Hz sample rate, and has an 8 bit sample resolution. Give your answer in bytes.",
+			answer: "1500",
+			answerType: "exact",
+		},
+		{
+			question: "Find the file size of a sound file that is 10 seconds long, has a 100Hz sample rate, and has an 4 bit sample resolution. Give your answer in bits.",
+			answer: "4000",
+			answerType: "exact",
+		},
+		{
+			question: "What error is given when the total from adding binary numbers cannot be stored within a byte of data? <br> A: Logical error <br> B: Overflow error <br> C: Stack error <br> D: Binary error",
+			answer: "b",
+			answerType: "exact",
+		},
+		{
+			question: "What is a positive of a lossless file format?",
+			answer: ["quality"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "What is a negative of a lossless file format?",
+			answer: ["size"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Give a common example of a lossless sound file format. <i>more answers give you more points</i>",
+			answer: ["wav", "aiff", "flac", "alac", "ape"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Give a common example of a lossy sound file format. <i>more answers give you more points</i>",
+			answer: ["mp3", "aac", "vorbis", "wma", "ape"],
+			answerType: "match",
+			required: 1,
 		},
 	],
 };
