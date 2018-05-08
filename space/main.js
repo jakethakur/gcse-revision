@@ -414,9 +414,9 @@ function loseGame() {
 		}
 	}
 	
-	console.log(correctAnswer);
+	//console.log(correctAnswer);
 	
 	document.getElementById("correctAnswer").innerText = correctAnswer;
 	
-	console.log(document.getElementById("correctAnswer").innerText);
+	//console.log(document.getElementById("correctAnswer").innerText);
 }
