@@ -60,7 +60,7 @@ function pickQuestion() {
 	
 	//data questions are special...
 	else if(questionTopic == "data") {
-		var random = randomNum(70); //number of possible data question types (outside of prewritten questions)
+		var random = randomNum(7); //number of possible data question types (outside of prewritten questions)
 		var foo;
 		var question;
 		var answer;
