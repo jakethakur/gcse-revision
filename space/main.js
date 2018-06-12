@@ -393,25 +393,27 @@ function loseGame() {
 	//exact answer
 	else if(questions[questionTopic][questionNumber].answerType == "exact") {
 		questionNumber = questions[questionTopic][questionNumber].answer;
-		correctAnswer = "The correct answer was: " + questionNumber;
+		correctAnswer = "The correct answer was: " +  + '"' + questionNumber + '"';
 	}
 	
 	//keyword answer (must say all keywords)
 	else if(questions[questionTopic][questionNumber].answerType == "match" && questions[questionTopic][questionNumber].answer.length == questions[questionTopic][questionNumber].answer.required) {
 		correctAnswer = "The answers were: ";
 		
-		for(var i = 0; i < questions[questionTopic][questionNumber].answer.length; i++) {
-			correctAnswer += questions[questionTopic][questionNumber].answer[i] + " ";
+		for(var i = 0; i < questions[questionTopic][questionNumber].answer.length - 1; i++) {
+			correctAnswer += '"' + questions[questionTopic][questionNumber].answer[i] + '", ';
 		}
+		correctAnswer += '"' + questions[questionTopic][questionNumber].answer[questions[questionTopic][questionNumber].answer.length - 1] + '"';
 	}
 	
 	//keyword answer (doesn't have to say all keywords)
 	else if(questions[questionTopic][questionNumber].answerType == "match" && questions[questionTopic][questionNumber].answer.length !== questions[questionTopic][questionNumber].answer.required) {
 		correctAnswer = "Some answers you could have said: ";
 		
-		for(var i = 0; i < questions[questionTopic][questionNumber].answer.length; i++) {
-			correctAnswer += questions[questionTopic][questionNumber].answer[i] + " ";
+		for(var i = 0; i < questions[questionTopic][questionNumber].answer.length - 1; i++) {
+			correctAnswer += '"' + questions[questionTopic][questionNumber].answer[i] + '", ';
 		}
+		correctAnswer += '"' + questions[questionTopic][questionNumber].answer[questions[questionTopic][questionNumber].answer.length - 1] + '"';
 	}
 	
 	//console.log(correctAnswer);
