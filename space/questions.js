@@ -108,6 +108,16 @@ var data  = {
 			answerType: "match",
 			required: 1,
 		},
+		{
+			question: "What is the name for 4 bits? <br> A: Chomp <br> B: Byte <br> C: Bit <br> D: Nibble",
+			answer: "d",
+			answerType: "exact",
+		},
+		{
+			question: "What is the name for 8 bits? <br> A: Chomp <br> B: Chunk <br> C: Byte <br> D: Nibble",
+			answer: "c",
+			answerType: "exact",
+		},
 	],
 	logic: [
 	//also includes evaluation of boolean statements
@@ -137,6 +147,37 @@ var data  = {
 			answer: "d",
 			answerType: "exact",
 		},
+		{
+			question: "Which logic gate has an output of 1 only if all its inputs are 1? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
+			answer: "a",
+			answerType: "exact",
+		},
+		{
+			question: "Which logic gate has an output of 1 if any of its inputs are 1? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
+			answer: "b",
+			answerType: "exact",
+		},
+		{
+			question: "Which logic gate has an output of 1 if its input is 0? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
+			answer: "c",
+			answerType: "exact",
+		},
+		{
+			question: "Which logic gate has an output of 1 if either but not both of its inputs are 1? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
+			answer: "d",
+			answerType: "exact",
+		},
+		{
+			question: "What does the symbol + mean in logical operations? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
+			answer: "b",
+			answerType: "exact",
+		},
+		{
+			question: "What does the symbol . mean in logical operations? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
+			answer: "a",
+			answerType: "exact",
+		},
+		// tbd: truth tables, simplify, simplification rules, simplify this with + and .
 	],
 	data: [
 	//also includes hex, binary, denary conversion, addition of binary
@@ -196,6 +237,53 @@ var data  = {
 			answer: ["mp3", "aac", "vorbis", "wma", "ape"],
 			answerType: "match",
 			required: 1,
+		},
+		{
+			question: "What information does metadata store for images? <i>more answers give you more points</i>",
+			answer: ["dimension", "resolution", "compression", "depth", "colour", "author", "time", "date", "creator", "purpose", "size", "source", "quality", "location"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "List an example of a character set. <i>more answers give you more points</i>",
+			answer: ["ascii", "unicode", "iso"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "What data type is '3.4'? <br> A: Integer <br> B: Real <br> C: Boolean <br> D: Character <br> E: String",
+			answer: "b",
+			answerType: "exact",
+		},
+		{
+			question: "What data type is '2.0'? <br> A: Integer <br> B: Real <br> C: Boolean <br> D: Character <br> E: String",
+			answer: "b",
+			answerType: "exact",
+		},
+		{
+			question: "What data type is '2'? <br> A: Integer <br> B: Real <br> C: Boolean <br> D: Character <br> E: String",
+			answer: "a",
+			answerType: "exact",
+		},
+		{
+			question: "What data type is 'true'? <br> A: Integer <br> B: Real <br> C: Boolean <br> D: Character <br> E: String",
+			answer: "c",
+			answerType: "exact",
+		},
+		{
+			question: "What data type is 'V'? <br> A: Integer <br> B: Real <br> C: Boolean <br> D: Character <br> E: String",
+			answer: "d",
+			answerType: "exact",
+		},
+		{
+			question: "What data type is '@'? <br> A: Integer <br> B: Real <br> C: Boolean <br> D: Character <br> E: String",
+			answer: "d",
+			answerType: "exact",
+		},
+		{
+			question: "What data type is 'Computer science is fun!'? <br> A: Integer <br> B: Real <br> C: Boolean <br> D: Character <br> E: String",
+			answer: "e",
+			answerType: "exact",
 		},
 	],
 };
