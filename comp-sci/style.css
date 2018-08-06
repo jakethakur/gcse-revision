@@ -1,0 +1,16 @@
+#game {
+    border: 1px solid black;
+	float: left;
+}
+
+#answerPane {
+	padding-left: 320px;
+}
+
+h2, h3 { 
+	font-weight: normal;
+}
+
+body {
+	font-family: sans-serif;
+}
