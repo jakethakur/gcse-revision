@@ -107,21 +107,27 @@ function sodiumHydroxide() {
 function acid(type) {
 	switch(type) {
 		case "Hydrochloric":
-			results.push("Hydrochloric acid added: no visible change.");
 			if (currentCompound.anion === "carbonate") {
 				results.push("Hydrochloric acid added: gas released.");
 			}
+			else {
+				results.push("Hydrochloric acid added: no visible change.");
+			}
 			break;
 		case "Nitric":
-			results.push("Nitric acid added: no visible change.");
 			if (currentCompound.anion === "carbonate") {
 				results.push("Nitric acid added: gas released.");
 			}
+			else {
+				results.push("Nitric acid added: no visible change.");
+			}
 			break;
 		case "Sulphuric":
-			results.push("Sulphuric acid added: no visible change.");
 			if (currentCompound.anion === "carbonate") {
 				results.push("Sulphuric acid added: gas released.");
+			}
+			else {
+				results.push("Sulphuric acid added: no visible change.");
 			}
 			break;
 		default:
@@ -204,7 +210,7 @@ function verifyAnswer() {
 	if (cationAnswerEl.value === currentCompound.cation && anionAnswerEl.value === currentCompound.anion) {
 		// correct
 		cationAnswerEl.value = "";
-		anionAsnwerEl.value = "";
+		anionAnswerEl.value = "";
 		newCompound();
 	}
 	else {
