@@ -120,7 +120,7 @@ var data  = {
 		},
 	],
 	logic: [
-	//also includes evaluation of boolean statements
+	// also includes evaluation of boolean statements
 		{
 			question: "What is the hardware's logic controlled by?",
 			answer: ["logic gate"],
