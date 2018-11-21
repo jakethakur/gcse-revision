@@ -3,6 +3,11 @@
 	float: left;
 }
 
+#highScores {
+	padding-top: 30px;
+	/* tbd replace high scores below game */
+}
+
 #answerPane {
 	padding-left: 320px;
 }

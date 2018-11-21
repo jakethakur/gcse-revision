@@ -1,20 +1,20 @@
 // init canvas
-var canvas = document.getElementById("game");
-var ctx = canvas.getContext("2d");
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
 
 // variables
-var height = 0; // score
+let height = 0; // score
 
-var questionCorrect = false; // is the rocket currently moving upwards?
+let questionCorrect = false; // is the rocket currently moving upwards?
 
 // import questions from js file (imported for speed)
-var questions = data;
+const questions = data;
 // address of current question
-var questionTopic = topics[randomNum(topics.length)]; 
-var questionNumber = null;
+let questionTopic = topics[randomNum(topics.length)]; 
+let questionNumber = null;
 
 // define player object
-var rocket = {
+let rocket = {
 	x: canvas.width/2,
 	y: 100,
 	
@@ -40,20 +40,41 @@ rocket.picture2 = new Image();
 rocket.picture2.src = "./assets/rocket2.png";
 rocket.currentPicture = rocket.picture1;
 // danger (currently unused)
-var danger = new Image();
-danger.src = "./assets/danger.png";
+const dangerImg = new Image();
+dangerImg.src = "./assets/danger.png";
 
 // set canvas background colour
-var canvasColour = "#d1f3ff";
+let canvasColour = "#d1f3ff";
+
+// verify answer on enter keypress
+document.addEventListener("keydown", checkKeyPress, false);
+
+function checkKeyPress(event) {
+let keyCode = event.keyCode;
+	if(keyCode === 13) { //enter keypress
+		verifyAnswer();
+	}
+}
+
+// wait for pictures to load
+// then start the game
+rocket.picture2.onload = function() {
+	// display high scores
+	displayScores();
+	// start update interval
+	updateInterval = setInterval(update, 10);
+	// choose a question
+	pickQuestion();
+}
 
 // question correct
-function gainHeight (heightGained, displayAnswer) {
+function gainHeight (heightGained, displayMoreAnswers) {
 	height += heightGained;
 	questionCorrect = true;
 	rocket.currentPicture = rocket.picture2;
 	rocket.speed = 0.5; // update rocket speed
 	
-	if (displayAnswer) {
+	if (displayMoreAnswers) {
 		// more possible corerct answers
 		displayAnswer();
 	}
@@ -71,7 +92,7 @@ function gainHeight (heightGained, displayAnswer) {
 // thanks to https://stackoverflow.com/a/13542669
 function darkenColour (color, percent) {
 	percent = -percent; // darken colour instead of lighten
-    var f=parseInt(color.slice(1),16),t=percent<0?0:255,p=percent<0?percent*-1:percent,R=f>>16,G=f>>8&0x00FF,B=f&0x0000FF;
+    let f=parseInt(color.slice(1),16),t=percent<0?0:255,p=percent<0?percent*-1:percent,R=f>>16,G=f>>8&0x00FF,B=f&0x0000FF;
     return "#"+(0x1000000+(Math.round((t-R)*p)+R)*0x10000+(Math.round((t-G)*p)+G)*0x100+(Math.round((t-B)*p)+B)).toString(16).slice(1);
 }
 
@@ -82,17 +103,17 @@ function pickQuestion () {
 	
 	// chance of giving a boolean logic question instead of a pre-written question
 	if(questionTopic == "logic" && randomNum(2) == 0) {
-		var booleanLogic = booleanQuestion(4);
+		let booleanLogic = booleanQuestion(4);
 		document.getElementById("question").innerHTML = "Evaluate: " + booleanLogic.question;
 		questionNumber = "exact" + booleanLogic.answer;
 	}
 	
 	// data questions are special...
 	else if(questionTopic == "data") {
-		var random = randomNum(7); // number of possible data question types (outside of prewritten questions)
-		var foo;
-		var question;
-		var answer;
+		let random = randomNum(7); // number of possible data question types (outside of prewritten questions)
+		let foo;
+		let question;
+		let answer;
 		
 		switch(random) {
 			case 0: // denary to binary
@@ -141,23 +162,23 @@ function pickQuestion () {
 
 // generate random number between 0 and upper limit (upper limit will never be reached)
 function randomNum(upper) {
-	var foo = Math.random();
+	let foo = Math.random();
 	foo *= upper;
-	var bar = Math.floor(foo);
+	let bar = Math.floor(foo);
 	return bar;
 }
 
 // make evaluate boolean statement question - part of logic
 function booleanQuestion(items) {
-	var operators = [" AND "," OR "," XOR "];
-	var operatorsJs = ["&","|","^"];
+	let operators = [" AND "," OR "," XOR "];
+	let operatorsJs = ["&","|","^"];
 	
-	var question = "";
-	var questionEval = "";
+	let question = "";
+	let questionEval = "";
 	
-	var unclosedBracket = 0;
+	let unclosedBracket = 0;
 	
-	for(var i = 0; i < items; i++) {
+	for(let i = 0; i < items; i++) {
 		// not (currently broken)
 		/*if(randomNum(3) == 0) {
 			question += "NOT";
@@ -191,7 +212,7 @@ function booleanQuestion(items) {
 		
 		// boolean operator
 		if(i < items - 1) {
-			var foo = randomNum(operators.length);
+			let foo = randomNum(operators.length);
 			question += operators[foo];
 			questionEval += operatorsJs[foo];
 		}
@@ -214,14 +235,14 @@ function booleanQuestion(items) {
 // make binary to denary question - part of data
 function binaryToDenary(binaryDigits) { //5
 	// build binary number
-	var binary = "1";
-	for(var i = 1; i < binaryDigits; i++) {
+	let binary = "1";
+	for(let i = 1; i < binaryDigits; i++) {
 		binary += randomNum(2);
 	}
 	//binary = parseInt(binary);
 	
 	// convert to denary
-	var denary = parseInt(binary, 2);
+	let denary = parseInt(binary, 2);
 	
 	// return
 	return({
@@ -233,9 +254,9 @@ function binaryToDenary(binaryDigits) { //5
 // make denary to hex question - part of data
 function denaryToHex(denaryDigits) { //2
 	// build denary number
-	var denary = "";
-	for(var i = 0; i < denaryDigits; i++) {
-		var random = randomNum(10);
+	let denary = "";
+	for(let i = 0; i < denaryDigits; i++) {
+		let random = randomNum(10);
 		while(denary.length == 0 && random == 0) {
 			random = randomNum(10);
 		}
@@ -244,7 +265,7 @@ function denaryToHex(denaryDigits) { //2
 	denary = parseInt(denary);
 	
 	// convert to hex
-	var hex = denary.toString(16);
+	let hex = denary.toString(16);
 	
 	// return
 	return({
@@ -256,19 +277,19 @@ function denaryToHex(denaryDigits) { //2
 // make binary addition question - part of data
 function addBinary(binaryDigits1, binaryDigits2) {
 	// build binary number 1
-	var binary1 = "1";
-	for(var i = 1; i < binaryDigits1; i++) {
+	let binary1 = "1";
+	for(let i = 1; i < binaryDigits1; i++) {
 		binary1 += randomNum(2);
 	}
 	
 	// build binary number 2
-	var binary2 = "1";
-	for(var i = 1; i < binaryDigits2; i++) {
+	let binary2 = "1";
+	for(let i = 1; i < binaryDigits2; i++) {
 		binary2 += randomNum(2);
 	}
 	
 	// add the two binary values
-	var answer = (parseInt(binary1, 2) + parseInt(binary2, 2)).toString(2);
+	let answer = (parseInt(binary1, 2) + parseInt(binary2, 2)).toString(2);
 	
 	// return
 	return({
@@ -305,39 +326,22 @@ function verifyAnswer() {
 	
 	// keyword answer
 	else if (questions[questionTopic][questionNumber].answerType == "match") {
-		var timesScored = 0; // answers correct
-		for (var i = 0; i < questions[questionTopic][questionNumber].answer.length; i++) {
+		let timesScored = 0; // answers correct
+		for (let i = 0; i < questions[questionTopic][questionNumber].answer.length; i++) {
 			if (document.getElementById("answer").value.toLowerCase().includes(questions[questionTopic][questionNumber].answer[i])) {
+				// count times scored
 				timesScored++;
 			}
 		}
 		
 		if (timesScored >= questions[questionTopic][questionNumber].required) { // correct
 			let displayMoreAnswers = timesScored !== questions[questionTopic][questionNumber].answer.length; // if not all the answers were found, display the rest
-			gainHeight(Math.round((canvas.height - rocket.y) / (canvas.height / 100))) * (timesScored + 1 - questions[questionTopic][questionNumber].required, displayMoreAnswers);
+			gainHeight(Math.round((canvas.height - rocket.y) / (canvas.height / 100)) * (timesScored + 1 - questions[questionTopic][questionNumber].required), displayMoreAnswers);
 		}
 		else { // incorrect
 			rocket.speed *= 2;
 		}
 	}
-}
-
-// verify answer on enter keypress
-document.addEventListener("keydown", checkKeyPress, false);
-
-function checkKeyPress(event) {
-var keyCode = event.keyCode;
-	if(keyCode == 13) { //enter keypress
-		verifyAnswer();
-	}
-}
-
-// wait for pictures to load
-rocket.picture2.onload = function() {
-	//start update interval
-	updateInterval = setInterval(update, 10);
-	//choose a question
-	pickQuestion();
 }
 
 // update game state
@@ -384,14 +388,14 @@ function render() {
 }
 
 // check the player hasn't lost
-function checkLoss () {
+function checkLoss() {
 	if(rocket.y > canvas.height) {
 		loseGame();
 	}
 }
 
 // end game due to player loss
-function loseGame () {
+function loseGame() {
 	//stop game updates
 	clearInterval(updateInterval);
 	
@@ -402,10 +406,14 @@ function loseGame () {
 	
 	// reveal correct answer
 	displayAnswer();
+	
+	// high scores
+	checkHighScore(height);
+	displayScores();
 }
 
-function displayAnswer () {
-	var correctAnswer;
+function displayAnswer() {
+	let correctAnswer;
 	
 	// question generated by main.js (hence questionNumber = "exact"+answer) - e.g: bool or data
 	if (questionNumber.toString().includes("exact")) {
@@ -423,7 +431,7 @@ function displayAnswer () {
 	else if (questions[questionTopic][questionNumber].answerType == "match" && questions[questionTopic][questionNumber].answer.length == questions[questionTopic][questionNumber].answer.required) {
 		correctAnswer = "The answers were: ";
 		
-		for(var i = 0; i < questions[questionTopic][questionNumber].answer.length - 1; i++) {
+		for(let i = 0; i < questions[questionTopic][questionNumber].answer.length - 1; i++) {
 			correctAnswer += '"' + questions[questionTopic][questionNumber].answer[i] + '", ';
 		}
 		correctAnswer += '"' + questions[questionTopic][questionNumber].answer[questions[questionTopic][questionNumber].answer.length - 1] + '"';
@@ -433,11 +441,74 @@ function displayAnswer () {
 	else if (questions[questionTopic][questionNumber].answerType == "match" && questions[questionTopic][questionNumber].answer.length !== questions[questionTopic][questionNumber].answer.required) {
 		correctAnswer = "Some answers you could have said: ";
 		
-		for(var i = 0; i < questions[questionTopic][questionNumber].answer.length - 1; i++) {
+		for(let i = 0; i < questions[questionTopic][questionNumber].answer.length - 1; i++) {
 			correctAnswer += '"' + questions[questionTopic][questionNumber].answer[i] + '", ';
 		}
 		correctAnswer += '"' + questions[questionTopic][questionNumber].answer[questions[questionTopic][questionNumber].answer.length - 1] + '"';
 	}
 	
 	document.getElementById("correctAnswer").innerText = correctAnswer;
+}
+
+// check/save high score
+function checkHighScore(score) {
+	let scoreArray = parseArray(localStorage.getItem("highScoreArray"));
+	let scoreChanged = false;
+	if (scoreArray !== null) {
+		scoreArray.forEach((savedScore, i) => {
+			if (score > savedScore) {
+				let oldSavedScore = savedScore;
+				scoreArray[i] = score;
+				score = savedScore; // save old saved score for being reinserted below
+				scoreChanged = true;
+			}
+		});
+		// trim array to only 5 scores
+		scoreArray.length = 5
+	}
+	else {
+		// init progress saving
+		scoreArray = [0,0,0,0,0];
+		scoreChanged = "init"; // add score to array later
+	}
+	localStorage.setItem("highScoreArray", stringifyArray(scoreArray));
+	if (scoreChanged === "init") {
+		scoreChanged = checkHighScore(score); // now actually add the high score (and save if it was added or not to scoreChanged)
+	}
+	return scoreChanged;
+}
+
+// display high scores
+function displayScores() {
+	scoreArray = parseArray(localStorage.getItem("highScoreArray"));
+	let textToDisplay = "No high scores yet";
+	if (scoreArray !== null) {
+		textToDisplay = "Your High Scores\n";
+		scoreArray.forEach((score, i) => {
+			if (i+1 < 6) {
+				// only display 5 scores
+				textToDisplay += (i+1) + ": " + score + "\n"
+			}
+		});
+	}
+	document.getElementById("highScores").innerText = textToDisplay;
+}
+
+// JSON stringify for array
+function stringifyArray(array) {
+	let string = "";
+	array.forEach(element => {
+		string += element + ",";
+	});
+	return string;
+}
+
+// JSON parse for array (for use with stringifyArray)
+function parseArray(JSON) {
+	if (JSON !== null) {
+		let array = [];
+		let elements = JSON.split(",");
+		return elements;
+	}
+	return JSON;
 }
