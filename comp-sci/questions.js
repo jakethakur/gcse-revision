@@ -72,12 +72,12 @@ var data  = {
 		},
 		{
 			question: "What does RISC stand for?</i>",
-			answer: ["reduced instruction set computer"],
+			answer: "reduced instruction set computer",
 			answerType: "exact",
 		},
 		{
 			question: "What does CISC stand for?</i>",
-			answer: ["complex instruction set computer"],
+			answer: "complex instruction set computer",
 			answerType: "exact",
 		},
 		{
@@ -283,6 +283,130 @@ var data  = {
 		{
 			question: "What data type is 'Computer science is fun!'? <br> A: Integer <br> B: Real <br> C: Boolean <br> D: Character <br> E: String",
 			answer: "e",
+			answerType: "exact",
+		},
+	],
+	// topics that are small enough to not be worth their own section
+	misc: [
+		// principles of programming
+		{
+			question: "List a high-level language. <i>more answers give you more points</i>",
+			answer: ["visual basic", "python", "javascript", "java", "c#", "c++", "go"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "List a low-level language. <i>more answers give you more points</i>",
+			answer: ["assembly", "machine"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "List a benefit of low-level languages. <i>more answers give you more points</i>",
+			answer: ["speed", "control"],
+			answerType: "match",
+			required: 1,
+		},
+		// software engineering
+		{
+			question: "What does IDE stand for?",
+			answer: "integrated development environment",
+			answerType: "exact",
+		},
+		{
+			question: "List a feature of an IDE. <i>more answers give you more points</i>",
+			answer: ["code editor", "runtime environment", "error diagnostics"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "List a way to debug a program using an IDE. <i>more answers give you more points</i>",
+			answer: ["trace", "break point", "memory inspection"],
+			answerType: "match",
+			required: 1,
+		},
+		// program construction
+		{
+			question: "List a type of translator. <i>more answers give you more points</i>",
+			answer: ["compiler", "interpreter", "assembler"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which type of translator translates one line at a time?",
+			answer: "interpreter",
+			answerType: "exact",
+		},
+		{
+			question: "Which type of translator translates all lines at once?",
+			answer: "compiler",
+			answerType: "exact",
+		},
+		{
+			question: "Which type of translator translates assembly language?",
+			answer: "assembler",
+			answerType: "exact",
+		},
+		{
+			question: "Which type of translator produces an executable file with runs the program?",
+			answer: "compiler",
+			answerType: "exact",
+		},
+		{
+			question: "List a stage involved in he compilation process. <i>more answers give you more points</i>",
+			answer: ["lexical analysis", "symbol table construction", "syntax analysis", "semantic analysis", "code generation", "optimisation"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which compilation stage involves removing white space?",
+			answer: "lexical analysis",
+			answerType: "exact",
+		},
+		{
+			question: "Which compilation stage involves storing variable and subroutine names?",
+			answer: "symbol table construction",
+			answerType: "exact",
+		},
+		{
+			question: "Which compilation stage involves checking the syntax is correct?",
+			answer: "syntax analysis",
+			answerType: "exact",
+		},
+		{
+			question: "Which compilation stage involves checking variable types?",
+			answer: "semantic analysis",
+			answerType: "exact",
+		},
+		{
+			question: "Which compilation stage involves converting the code into object code (understood by computer)?",
+			answer: "code generation",
+			answerType: "exact",
+		},
+		{
+			question: "Which compilation stage involves making the program run better on the processor?",
+			answer: "optimisation",
+			answerType: "exact",
+		},
+		{
+			question: "List a type of error that can occur during programming. <i>more answers give you more points</i>",
+			answer: ["syntax", "logic", "runtime", "linking", "rounding", "truncation"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which error is caused by division by 0?",
+			answer: "runtime",
+			answerType: "exact",
+		},
+		{
+			question: "Which error is caused by division by incorrect parameters for a subroutine?",
+			answer: "runtime",
+			answerType: "exact",
+		},
+		{
+			question: "Which error is thrown before the program runs?",
+			answer: "syntax",
 			answerType: "exact",
 		},
 	],
