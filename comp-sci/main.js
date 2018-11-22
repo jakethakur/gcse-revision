@@ -83,7 +83,7 @@ function gainHeight (heightGained, displayMoreAnswers) {
 	}
 	
 	// canvas colour darken
-	canvasColour = darkenColour(canvasColour, heightGained/1000)
+	canvasColour = darkenColour(canvasColour, heightGained/1000);
 	
 	pickQuestion();
 }
@@ -382,7 +382,13 @@ function render() {
 	ctx.drawImage(rocket.currentPicture, 0, 0, rocket.imageSize.x, rocket.imageSize.y, rocket.x - rocket.imageSize.x / 2, rocket.y - rocket.imageSize.y / 2, rocket.imageSize.x, rocket.imageSize.y);
 	
 	// score text
-	ctx.fillStyle = "black";
+	if (height > 750) {
+		// if the score is too high hence the background is too dark, make the score text white
+		ctx.fillStyle = "white";
+	}
+	else {
+		ctx.fillStyle = "black";
+	}
 	ctx.font = "18px Arial";
 	ctx.fillText("Height: " + height, 10, 20);
 }
@@ -459,7 +465,7 @@ function checkHighScore(score) {
 			if (score > savedScore) {
 				let oldSavedScore = savedScore;
 				scoreArray[i] = score;
-				score = savedScore; // save old saved score for being reinserted below
+				score = oldSavedScore; // save old saved score for being reinserted below
 				scoreChanged = true;
 			}
 		});
