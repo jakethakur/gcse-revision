@@ -5,7 +5,7 @@
 //match question: user must enter the answer word within their answer - answer must be an array
 //required: number of keywords required for match question (any over this they are given extra points for)
 
-var topics = ["hardware","logic","data"];
+var topics = ["hardware","logic","data", "misc"];
 
 var data  = {
 	hardware: [
