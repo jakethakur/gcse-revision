@@ -5,7 +5,7 @@
 //match question: user must enter the answer word within their answer - answer must be an array
 //required: number of keywords required for match question (any over this they are given extra points for)
 
-var topics = ["hardware","logic","data", "misc"];
+var topics = ["hardware","logic","data", "misc", "ethics"];
 
 var data  = {
 	hardware: [
@@ -396,18 +396,95 @@ var data  = {
 		},
 		{
 			question: "Which error is caused by division by 0?",
-			answer: "runtime",
-			answerType: "exact",
+			answer: ["runtime"],
+			answerType: "match",
+			required: 1,
 		},
 		{
 			question: "Which error is caused by division by incorrect parameters for a subroutine?",
-			answer: "runtime",
-			answerType: "exact",
+			answer: ["runtime"],
+			answerType: "match",
+			required: 1,
 		},
 		{
 			question: "Which error is thrown before the program runs?",
-			answer: "syntax",
+			answer: ["syntax"],
+			answerType: "match",
+			required: 1,
+		},
+	],
+	ethics: [
+		{
+			question: "Which best describes 'ethics'? <br> A: How something works <br> B: A set of moral principles <br> C: What governments think about an issue <br> D: A fill-up for a GCSE spec ",
+			answer: "b",
 			answerType: "exact",
 		},
+		{
+			question: "List a type of hacker. <i>more answers give you more points</i>",
+			answer: ["white-hat", "black-hat", "grey-hat"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which type of hacker is seen as most ethical?",
+			answer: "white-hat",
+			answerType: "exact",
+		},
+		{
+			question: "Which best describes 'legislation'? <br> A: A penalty that applies to someone who breaks the law <br> B: The altering of existing law(s) by a government <br> C: Law(s) introduced by a government <br> D: Protest against a law ",
+			answer: "c",
+			answerType: "exact",
+		},
+		{
+			question: "Which best describes 'sanction'? <br> A: A penalty that applies to someone who breaks the law <br> B: The altering of existing law(s) by a government <br> C: Law(s) introduced by a government <br> D: Protest against a law ",
+			answer: "a",
+			answerType: "exact",
+		},
+		{
+			question: "Which act relevant to computing: <ul><li>Limits the amount of data that an organisation is allowed to collect about a person</li><li>Governs the security of the data when it has been collected</li></ul>",
+			answer: ["data protection"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "What year was the Data Protection Act passed?",
+			answer: "1998",
+			answerType: "exact",
+		},
+		{
+			question: "Which act relevant to computing: <ul><li>Protects personal data held by organisations from hackers</li></ul>",
+			answer: ["computer misuse"],
+			answerType: "match",
+			required: 1,
+		},
+		// what crime does data protection act prevent? (piracy)
+		{
+			question: "What year was the Computer Misuse Act passed?",
+			answer: "1990",
+			answerType: "exact",
+		},
+		{
+			question: "Which act relevant to computing: <ul><li>Protects intellectual property</li></ul>",
+			answer: ["copyright", "design", "patents"],
+			answerType: "match",
+			required: 3,
+		},
+		{
+			question: "What year was the Copyright, Designs and Patents Act passed?",
+			answer: "1988",
+			answerType: "exact",
+		},
+		{
+			question: "Which act relevant to computing: <ul><li>Makes it possible for the public to access information about a public organisation</li>li>Requires public organisations to publish certain data on a regular basis</li></ul>",
+			answer: ["freedom of information"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "What year was the Freedom of Information Act passed?",
+			answer: "2000",
+			answerType: "exact",
+		},
+		// what is defined as a public company?
 	],
 };

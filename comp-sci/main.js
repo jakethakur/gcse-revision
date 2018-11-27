@@ -406,7 +406,13 @@ function loseGame() {
 	clearInterval(updateInterval);
 	
 	//text to tell the player they lost
-	ctx.fillStyle = "black";
+	if (height > 750) {
+		// if the score is too high hence the background is too dark, make the score text white
+		ctx.fillStyle = "white";
+	}
+	else {
+		ctx.fillStyle = "black";
+	}
 	ctx.font = "18px Arial";
 	ctx.fillText("You died; refresh to play again!", 10, 50);
 	
