@@ -1,9 +1,9 @@
-//make sure the answers are all in lower case
+// make sure the answers are all in lower case
 
-//user answers are not case sensitive
-//exact question: user must enter the exact answer - answer must be a string
-//match question: user must enter the answer word within their answer - answer must be an array
-//required: number of keywords required for match question (any over this they are given extra points for)
+// user answers are not case sensitive
+// exact question: user must enter the exact answer - answer must be a string
+// match question: user must enter the answer word within their answer - answer must be an array
+// required: number of keywords required for match question (any over this they are given extra points for)
 
 var topics = ["hardware","logic","data", "misc", "ethics"];
 
@@ -28,6 +28,12 @@ var data  = {
 			question: "Which is <strong>not</strong> an example of a device which uses embedded systems? <br> A: Wi-fi router <br> B: Microwave oven <br> C: Laptop <br> D: Blood pressure reader",
 			answer: "c",
 			answerType: "exact",
+		},
+		{
+			question: "Why are embedded systems used? <i>more answers give you more points</i>",
+			answer: ["size", "cost", "automatic"],
+			answerType: "match",
+			required: 1,
 		},
 		{
 			question: "Which is <strong>not</strong> required for <strong>all</strong> computer systems? <br> A: Screen <br> B: Operating system <br> C: Motherboard <br> D: Memory",
@@ -68,6 +74,52 @@ var data  = {
 			question: "What are the parts of a CPU (their abbreviations)? <i>more answers give you more points</i>",
 			answer: ["alu","acc","cu","mar","mdr","pc"],
 			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which part of the CPU is represented by: <img src='./assets/alu.png'>? <br> A: Arithmetic logic unit <br> B: Register <br> C: Bus <br> D: Control unit",
+			answer: "a",
+			answerType: "exact",
+		},
+		{
+			question: "Which part of the CPU is represented by: <img src='./assets/register.png'>? <br> A: Arithmetic logic unit <br> B: Register <br> C: Bus <br> D: Control unit",
+			answer: "b",
+			answerType: "exact",
+		},
+		{
+			question: "Which part of the CPU is represented by: <img src='./assets/cu.png'>? <br> A: Arithmetic logic unit <br> B: Register <br> C: Bus <br> D: Control unit",
+			answer: "d",
+			answerType: "exact",
+		},
+		{
+			question: "What does ALU stand for?",
+			answer: "arithmetic logic unit",
+			answerType: "exact",
+		},
+		{
+			question: "What does ACC stand for?",
+			answer: "accumilator",
+			answerType: "exact",
+		},
+		{
+			question: "What does CU stand for?",
+			answer: "control unit",
+			answerType: "exact",
+		},
+		{
+			question: "What does MAR stand for?",
+			answer: "memory address register",
+			answerType: "exact",
+		},
+		{
+			question: "What does MDR stand for?",
+			answer: "memory data register",
+			answerType: "exact",
+		},
+		{
+			question: "What does PC stand for?",
+			answer: "program counter",
+			answerType: "exact",
 			required: 1,
 		},
 		{
@@ -117,6 +169,80 @@ var data  = {
 			question: "What is the name for 8 bits? <br> A: Chomp <br> B: Chunk <br> C: Byte <br> D: Nibble",
 			answer: "c",
 			answerType: "exact",
+		},
+		{
+			question: "How many bytes in a kB?",
+			answer: "1024",
+			answerType: "exact",
+		},
+		{
+			question: "How many kB in a MB?",
+			answer: "1024",
+			answerType: "exact",
+		},
+		{
+			question: "What does RAM stand for?",
+			answer: "random access memory",
+			answerType: "exact",
+		},
+		{
+			question: "What does ROM stand for?",
+			answer: "read only memory",
+			answerType: "exact",
+		},
+		{
+			question: "What does GPU stand for?",
+			answer: "graphics processing unit",
+			answerType: "exact",
+		},
+		{
+			question: "What is the place in the computer where the program and data that are currently in use are stored?",
+			answer: "RAM",
+			answerType: "exact",
+		},
+		{
+			question: "What is the place in the computer where the programs needed to boot up the computer are stored?",
+			answer: "ROM",
+			answerType: "exact",
+		},
+		{
+			question: "Does RAM or ROM have a higher memory capacity?",
+			answer: "RAM",
+			answerType: "exact",
+		},
+		{
+			question: "Which type of computer memory is volatile?",
+			answer: "RAM",
+			answerType: "exact",
+		},
+		{
+			question: "What type of storage is a hard disk? <br> A: Optical <br> B: Waterman <br> C: Magnetic <br> D: Solid-state",
+			answer: "c",
+			answerType: "exact",
+		},
+		{
+			question: "Which hardware component connects other components together? <i>(HINT: other components are soldered to this)</i>",
+			answer: ["motherboard"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which hardware component provides output to your speakers? <i>(HINT: uses digital-to-analogue converter)</i>",
+			answer: ["sound board"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "What is the abbreviation of the hardware component that performs massive, complex computations on large sets of data? <i>(HINT: primarily used for rendering and displaying graphics to the screen)</i>",
+			answer: ["gpu"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "List some common uses of the GPU. <i>more answers give you more points</i>",
+			answer: ["gaming", "data", "cryptocurrency"],
+			answerType: "match",
+			required: 1,
 		},
 	],
 	logic: [
@@ -180,7 +306,8 @@ var data  = {
 		// tbd: truth tables, simplify, simplification rules, simplify this with + and .
 	],
 	data: [
-	//also includes hex, binary, denary conversion, addition of binary
+	// also includes hex, binary, denary conversion, addition of binary
+	// tbd: binary shift
 		{
 			question: "What is the measurement of sampling rate?",
 			answer: ["hertz"],
@@ -285,6 +412,34 @@ var data  = {
 			answer: "e",
 			answerType: "exact",
 		},
+		{
+			question: "What data type is ['Bob', 'Jane', 'Bill']? <br> A: String <br> B: One-dimensional string array <br> C: Two-dimensional string array <br> D: Three-dimensional string array",
+			answer: "b",
+			answerType: "exact",
+		},
+		{
+			question: "What is the name of an array that does not have a fixed length?",
+			answer: ["dynamic"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "What is the name of an array that has a fixed length?",
+			answer: ["static"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which is an array of different data types? <br> A: Table <br> B: Record <br> C: Field <br> D: Database",
+			answer: "b",
+			answerType: "exact",
+		},
+		{
+			question: "Which is an array of the same data type? <br> A: Table <br> B: Record <br> C: Field <br> D: Database",
+			answer: "c",
+			answerType: "exact",
+		},
+		// tbd validation types
 	],
 	// topics that are small enough to not be worth their own section
 	misc: [
@@ -420,6 +575,18 @@ var data  = {
 			answerType: "exact",
 		},
 		{
+			question: "List an ethical impact of technology. <i>more answers give you more points</i>",
+			answer: ["privacy", "cybersecurity", "hacking", "access"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "List a possible cause of loss of privacy due to technology. <i>more answers give you more points</i>",
+			answer: ["monitoring", "interception", "distribution", "theft"],
+			answerType: "match",
+			required: 1,
+		},
+		{
 			question: "List a type of hacker. <i>more answers give you more points</i>",
 			answer: ["white-hat", "black-hat", "grey-hat"],
 			answerType: "match",
@@ -441,6 +608,12 @@ var data  = {
 			answerType: "exact",
 		},
 		{
+			question: "List a type of sanction. <i>more answers give you more points</i>",
+			answer: ["fine", "prison sentence"],
+			answerType: "match",
+			required: 1,
+		},
+		{
 			question: "Which act relevant to computing: <ul><li>Limits the amount of data that an organisation is allowed to collect about a person</li><li>Governs the security of the data when it has been collected</li></ul>",
 			answer: ["data protection"],
 			answerType: "match",
@@ -457,7 +630,6 @@ var data  = {
 			answerType: "match",
 			required: 1,
 		},
-		// what crime does data protection act prevent? (piracy)
 		{
 			question: "What year was the Computer Misuse Act passed?",
 			answer: "1990",
@@ -475,6 +647,11 @@ var data  = {
 			answerType: "exact",
 		},
 		{
+			question: "What crime does the Copyright, Designs and Patents Act combat?",
+			answer: "piracy",
+			answerType: "exact",
+		},
+		{
 			question: "Which act relevant to computing: <ul><li>Makes it possible for the public to access information about a public organisation</li>li>Requires public organisations to publish certain data on a regular basis</li></ul>",
 			answer: ["freedom of information"],
 			answerType: "match",
@@ -485,6 +662,39 @@ var data  = {
 			answer: "2000",
 			answerType: "exact",
 		},
-		// what is defined as a public company?
+		{
+			question: "List an example of a public organisation. <i>more answers give you more points</i>",
+			answer: ["school", "university", "parliament", "council", "police", "government", "nhs", "army"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which of these does not apply to a Creative Commons license? <br> A: There are many different types of the license <br> B: Work may be shared freely if under this license <br> C: Licenses provided by Creative Commons organisation <br> D: Individual must ask owner's position to use work under this license ",
+			answer: "d",
+			answerType: "exact",
+		},
+		{
+			question: "List a type of Creative Commons license. <i>more answers give you more points</i>",
+			answer: ["attribution", "share-alike", "non-commerical", "no derivative works"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "List a type of Creative Commons license. <i>more answers give you more points</i>",
+			answer: ["attribution", "share-alike", "non-commerical", "no derivative works"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "List a positive impact of technology on the environment. <i>more answers give you more points</i>",
+			answer: ["education", "communication", "research"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which typically uses the least power? <br> A: Large monitor desktop computer <br> B: Small monitor desktop computer <br> C: Large monitor laptop computer <br> D: Small monitor laptop computer ",
+			answer: "d",
+			answerType: "exact",
+		},
 	],
 };
