@@ -473,7 +473,7 @@ var data  = {
 		},
 		{
 			question: "Give a role of the operating system. <i>more answers give you more points</i>",
-			answer: ["user interface", "memory management", "multitask", "peripheral management", "drivers", "user management", "file management", "user interface"],
+			answer: ["user interface", "memory", "multitask", "peripheral management", "drivers", "user", "file"],
 			answerType: "match",
 			required: 1,
 		},
