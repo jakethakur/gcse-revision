@@ -77,17 +77,17 @@ var data  = {
 			required: 1,
 		},
 		{
-			question: "Which part of the CPU is represented by: <img src='./assets/alu.png'>? <br> A: Arithmetic logic unit <br> B: Register <br> C: Bus <br> D: Control unit",
+			question: "Which part of the CPU is represented by: <img src='./assets/alu.PNG'>? <br> A: Arithmetic logic unit <br> B: Register <br> C: Bus <br> D: Control unit",
 			answer: "a",
 			answerType: "exact",
 		},
 		{
-			question: "Which part of the CPU is represented by: <img src='./assets/register.png'>? <br> A: Arithmetic logic unit <br> B: Register <br> C: Bus <br> D: Control unit",
+			question: "Which part of the CPU is represented by: <img src='./assets/register.PNG'>? <br> A: Arithmetic logic unit <br> B: Register <br> C: Bus <br> D: Control unit",
 			answer: "b",
 			answerType: "exact",
 		},
 		{
-			question: "Which part of the CPU is represented by: <img src='./assets/cu.png'>? <br> A: Arithmetic logic unit <br> B: Register <br> C: Bus <br> D: Control unit",
+			question: "Which part of the CPU is represented by: <img src='./assets/cu.PNG'>? <br> A: Arithmetic logic unit <br> B: Register <br> C: Bus <br> D: Control unit",
 			answer: "d",
 			answerType: "exact",
 		},
@@ -98,7 +98,7 @@ var data  = {
 		},
 		{
 			question: "What does ACC stand for?",
-			answer: "accumilator",
+			answer: "accumulator",
 			answerType: "exact",
 		},
 		{
@@ -197,22 +197,22 @@ var data  = {
 		},
 		{
 			question: "What is the place in the computer where the program and data that are currently in use are stored?",
-			answer: "RAM",
+			answer: "ram",
 			answerType: "exact",
 		},
 		{
 			question: "What is the place in the computer where the programs needed to boot up the computer are stored?",
-			answer: "ROM",
+			answer: "rom",
 			answerType: "exact",
 		},
 		{
 			question: "Does RAM or ROM have a higher memory capacity?",
-			answer: "RAM",
+			answer: "ram",
 			answerType: "exact",
 		},
 		{
 			question: "Which type of computer memory is volatile?",
-			answer: "RAM",
+			answer: "ram",
 			answerType: "exact",
 		},
 		{
@@ -441,6 +441,9 @@ var data  = {
 		},
 		// tbd validation types
 	],
+	software: [
+	
+	],
 	// topics that are small enough to not be worth their own section
 	misc: [
 		// principles of programming
@@ -576,7 +579,7 @@ var data  = {
 		},
 		{
 			question: "List an ethical impact of technology. <i>more answers give you more points</i>",
-			answer: ["privacy", "cybersecurity", "hacking", "access"],
+			answer: ["privacy", "cybersecurity", "hacking", "access", "equality"],
 			answerType: "match",
 			required: 1,
 		},
@@ -663,7 +666,7 @@ var data  = {
 			answerType: "exact",
 		},
 		{
-			question: "List an example of a public organisation. <i>more answers give you more points</i>",
+			question: "List an example of a type of public organisation. <i>more answers give you more points</i>",
 			answer: ["school", "university", "parliament", "council", "police", "government", "nhs", "army"],
 			answerType: "match",
 			required: 1,

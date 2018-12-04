@@ -18,7 +18,7 @@ let rocket = {
 	x: canvas.width/2,
 	y: 100,
 	
-	speed: 0.5, // rate of falling
+	speed: 0.3, // rate of falling
 	
 	imageSize: {
 		x: 53,
