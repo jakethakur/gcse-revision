@@ -5,7 +5,7 @@
 // match question: user must enter the answer word within their answer - answer must be an array
 // required: number of keywords required for match question (any over this they are given extra points for)
 
-var topics = ["hardware","logic","data", "misc", "ethics"];
+var topics = ["hardware", "logic", "data", "software", "misc", "ethics"];
 
 var data  = {
 	hardware: [
@@ -471,6 +471,39 @@ var data  = {
 			answer: "operating system",
 			answerType: "exact",
 		},
+		{
+			question: "Give a role of the operating system. <i>more answers give you more points</i>",
+			answer: ["user interface", "memory management", "multitask", "peripheral management", "drivers", "user management", "file management", "user interface"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "<strong>True</strong> or <strong>false</strong>: a computer cannot be used without an operating system.",
+			answer: "true",
+			answerType: "exact",
+			suddenDeath: true,
+		},
+		{
+			question: "What does GUI stand for?",
+			answer: "graphical user interface",
+			answerType: "exact",
+		},
+		{
+			question: "What does CLI stand for?",
+			answer: "command line interface",
+			answerType: "exact",
+		},
+		{
+			question: "What does NLI stand for?",
+			answer: "natural language interface",
+			answerType: "exact",
+		},
+		{
+			question: "Give an example of an NLI. <i>more answers give you more points</i>",
+			answer: ["siri", "alexa", "cortana", "google assistant"],
+			answerType: "match",
+			required: 1,
+		},
 	],
 	// topics that are small enough to not be worth their own section
 	misc: [
@@ -711,8 +744,8 @@ var data  = {
 			required: 1,
 		},
 		{
-			question: "List a type of Creative Commons license. <i>more answers give you more points</i>",
-			answer: ["attribution", "share-alike", "non-commerical", "no derivative works"],
+			question: "List a negative impact of technology on the environment. <i>more answers give you more points</i>",
+			answer: ["waste", "pollution", "resource", "landfill", "material", "packaging"],
 			answerType: "match",
 			required: 1,
 		},
