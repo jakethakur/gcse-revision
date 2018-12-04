@@ -510,7 +510,7 @@ var data  = {
 		// principles of programming
 		{
 			question: "List a high-level language. <i>more answers give you more points</i>",
-			answer: ["visual basic", "python", "javascript", "java", "c#", "c++", "go"],
+			answer: ["visual basic", "python", "javascript", "java", "c#", "c++", "go", "lisp", "scala", "ruby"],
 			answerType: "match",
 			required: 1,
 		},
@@ -673,7 +673,7 @@ var data  = {
 		},
 		{
 			question: "List a type of sanction. <i>more answers give you more points</i>",
-			answer: ["fine", "prison sentence"],
+			answer: ["fine", "prison"],
 			answerType: "match",
 			required: 1,
 		},
