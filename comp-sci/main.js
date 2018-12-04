@@ -18,7 +18,9 @@ let rocket = {
 	x: canvas.width/2,
 	y: 100,
 	
-	speed: 0.3, // rate of falling
+	// rate of falling
+	speed: 0.1, // initial speed is a bit slower
+	baseSpeed: 0.3,
 	
 	imageSize: {
 		x: 53,
@@ -72,7 +74,7 @@ function gainHeight (heightGained, displayMoreAnswers) {
 	height += heightGained;
 	questionCorrect = true;
 	rocket.currentPicture = rocket.picture2;
-	rocket.speed = 0.5; // update rocket speed
+	rocket.speed = rocket.baseSpeed; // update rocket speed
 	
 	if (displayMoreAnswers) {
 		// more possible corerct answers

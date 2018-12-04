@@ -31,7 +31,7 @@ var data  = {
 		},
 		{
 			question: "Why are embedded systems used? <i>more answers give you more points</i>",
-			answer: ["size", "cost", "automatic"],
+			answer: ["size", "cost", "cheap", "automatic"],
 			answerType: "match",
 			required: 1,
 		},
@@ -442,7 +442,35 @@ var data  = {
 		// tbd validation types
 	],
 	software: [
-	
+		{
+			question: "Which type of software controls the operation of hardware in a computer?",
+			answer: ["system"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which type of software is the everyday programs that we use to create documents and perform tasks?",
+			answer: ["application"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which type of software provides a platform to run applications software?",
+			answer: ["system"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "List a type of systems software. <i>more answers give you more points</i>",
+			answer: ["device driver", "utility software", "operating system"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which type of systems software: <ul><li>Is loaded by the computer after the initial boot-up</li><li>Controls the operations of the hardware</li><li>Manages all other software</li></ul>?",
+			answer: "operating system",
+			answerType: "exact",
+		},
 	],
 	// topics that are small enough to not be worth their own section
 	misc: [
@@ -655,7 +683,7 @@ var data  = {
 			answerType: "exact",
 		},
 		{
-			question: "Which act relevant to computing: <ul><li>Makes it possible for the public to access information about a public organisation</li>li>Requires public organisations to publish certain data on a regular basis</li></ul>",
+			question: "Which act relevant to computing: <ul><li>Makes it possible for the public to access information about a public organisation</li><li>Requires public organisations to publish certain data on a regular basis</li></ul>",
 			answer: ["freedom of information"],
 			answerType: "match",
 			required: 1,

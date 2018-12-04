@@ -69,3 +69,464 @@ What is the hexadecimal RGB code for Yellow, where Yellow is made up of Red and 
 If the binary ASCII code for character A is 1000001 what is the binary ASCII code for character F?
 38)    
 What is the Run Length Encoding of 111001?
+
+A.S. quizlet:
+
+1. Computer systems - 1. Computer systems
+What 4 parts of the computer does the CPU connect to? - ports
+RAM
+Storage
+What two parts make up a computer system? - Hardware and software
+What is Hardware? - Physical parts that make up a computer system
+What is software? - The code that makes the computer run
+What is the data bus used for? - Communication between the RAM and the CPU
+What is the address bus used for? - Communication between the RAM and Storage
+What is the Ethernet port used for? - Internet
+What is the USB port used for? - Transfer data
+What is the DVI port used for? - Just video transfer
+What is the HDMI port used for? - Video and sound transfer
+What is the Audio port used for? - Audio transfer
+How does Input devices work in a computer system? - Input data into the computer system
+What is the main reason for Process's in a computer system? - inputted data is converted into a readable form
+What do Output devices do in a computer system? - Show the processed data to the user
+List some input devices - Keyboard
+Mouse
+Joystick
+Microphone
+Scanner
+Graphics tablet and stylus
+Bar code recognition
+Optical mark recognition
+Sensors
+What are the advantages and disadvantages of a Graphics tablet and stylus? - +
+More natural
+Greater accuracy and precision
+
+-
+Expensive
+Hard to select and click on items
+Large
+What are the advantages and disadvantages of a Bar code recognition scanner? - +
+Fast
+Shows error
+can change price easily
+
+-
+Products have to be entered in to database
+If system fails they don't work
+What are the advantages and disadvantages of a Optical mark recognition scanner? - +
+Very fast
+Accurate
+
+-
+Can't analysis human errors
+No text
+Needs special paper and stationary
+List some output devices - Inkjet printer
+Laser printer
+Plotter 
+Speakers
+Headphones
+Monitor 
+Projector
+What are the advantages and disadvantages of a inkjet printer? - +
+Cheap 
+Small
+Good quality prints
+
+-
+Loud
+Slow
+Small cartridges
+Page can come out wet
+What are the advantages and disadvantages of a laser printer? - +
+High quality print out(not wet)
+Fast
+Can do lots of printing
+
+-
+Expensive
+Complex and expensive to repair
+Large
+What are the advantages and disadvantages of a plotter? - +
+Very high quality
+Can print out large pictures
+
+-
+Slow
+Expensive
+List some input and output devices - Voice activated systems
+Multi-touch gestures (touch screens)
+Whats the 5 purposes of the CPU? - Control input output devices
+Synchronise data
+Logical decisions
+Calculation
+Sorting and searching for data
+Explain the fetch execute cycle - Data is fetch for by the CPU
+This data is the decoded by the CPU
+This data is the executed by the CPU
+What does a controller do? - Controls fetch execute cycle
+What does the arithmetic logic unit (ALU) do? - Logical decisions
+Calculation
+What do registers do? - Fast temporary storage inside CPU
+What does internal memory do? - Used by the CPU like ram
+What do buses do? - Transfer data
+How does the clock speed affect a PC? - How fast the fetch execute cycle is carried out
+How does the number of cores affect a PC? - Allow multitasking
+Performance
+Amount of processors
+How does the cache-memory affect a PC and what is it? - High speed memory next to CPU
+Improves performance with more
+How does the cache-disk affect a PC and what is it? - Data stored in RAM
+Improves performance with more
+How do different types of processors affect a PC? - 64 bit - Fast can hold 1TB of RAM
+32 bit - Slow can hold 4GB of RAM
+What is ROM? - Read only memory
+Non- volatile holds operating system
+What is RAM? - Random access memory
+Volatile stores data closer to CPU to increase performance
+What is virtual memory? - Where the hard disk is used temporarily as RAM
+What is a magnetic disk and what are it's advantages and disadvantages? - 1 and 0 are assigned as magnetic fields for storage
++
+High storage
+Fast
+Strong
+
+-
+Expensive
+Not portable
+What is magnetic tape and what are it's advantages and disadvantages? - 1 and 0 are punched in to tape for storage
++
+High storage
+Cheap
+
+-
+Slow 
+Fragile
+What is a CD and what are it's advantages and disadvantages? - 1 and 0 are burned to the surface by a laser for storage
++
+Portable
+Cheap
+
+-
+Low storage
+Fragile 
+Slow
+What is a SSD and what are it's advantages and disadvantages? - Data is compressed and composed into a series of logic gates
+
+High storage
+Fast
+Portable (USB) or Not portable (SSD
+Strong (SSD) or Fragie (USB)
+Expensive
+What is cloud storage and what are it's advantages and disadvantages? - Storing data on a external sever accessible by the internet
++
+High storage
+Accessible anywhere
+
+-
+Requires internet
+Could be hacked
+Speed depends on internet speed
+What does a modem do? - Allows data to be transferred over a phone network
+What does modulation mean? - Converts data in to analogue
+What does de-modulation mean? - Coverts analogue into data
+2. Data represation - 
+What does ASCII stand for? - American standard code for information interchange
+What is ASCII? - 7 bit code that can hold 128 characters
+What is Unicode? - 16 bit code that can hold 65,536 characters
+What is a truth table? - Shows all possible logical inputs and there associated outputs
+What does a NOT gate do and what does it look like? - I-_
+-------I _IO-------
+ I-
+Gives the oppisite
+What does a AND gate do and what does it look like? - Like a D with two inputs and one output
+Only provides a 1 if two 1 are present
+What does a OR gate do and what does it look like? - Like a banana with two inputs and one output
+Gives a 1 if a 1 is present
+Put 200 into binary - 1100 1000
+Put 79 in to hexadecimal - 4F
+What is a Character and how big is it? - 1 byte and stores a character
+What is a Integer and how big is it? - 4 bytes and stores a whole number
+What is a Real and how big is it? - 8 bytes and stores a decimal number
+What is a Boolean and how big is it ? - 1 byte and stores True or False
+What is a String and how big is it? - 1 byte and stores a character which is pieced together with other characters to form a word
+What is a bit ? - Either 1 or 0
+What is a nibble ? - 4 bits
+What is a byte? - 8 bits
+What is a kilobyte? - 1024 bytes
+What is a megabyte? - 1024 KB
+What is a gigabyte? - 1024 MB
+What is a terabyte? - 1024 GB
+What is a petabyte? - 1024 TB
+What is a exobyte? - 1024 PB
+What is a zettabyte? - 1024 EB
+What is a yottobyte? - 1024 ZB
+How does a CPU decode a byte? - The first nibble in the operator (instruction) and the second nibble is the operand (data)
+How does the CPU keep track of instruction? - By updating its program counter
+Where does the CPU hold these instruction? - In the main memory
+How is sound recorded? - Analogue is changed into binary to represent the curve
+What is the sampling rate and what is it measured in? - Hz and how many sound samples are taken per second
+What does a higher sampling rate give? - Smoother sound
+What id the sampling resolution? - Audio bit depth
+What does a high sampling resolution give you? - High quality recording and a large sound range
+What is a pixel? - The smallest dot on a image
+What is metadata? - The information on the images height, width and colour depth that comes in the file
+What is resolution? - Amount of pixels per inch
+What is colour depth? - Amount of bits per pixel
+How many colours does 1 bit per pixel give? - 2... Black and white
+How many colours does 8 bits per pixel (1 byte) give? - 256 colours
+How many colours does a 16 bits per pixel (2 bytes) give? - 65536 colours
+3. Computer software - 
+What is a operating system? - A software that controls hardware and creates a user interface to run software
+What are the 5 main parts of a operating system? - User interface
+Multitasking 
+Peripheral management
+Memory management
+Security
+What is a GUI - Graphical user interface
+What makes a GUI so easy to use? - Windows and Icons (make it use to use) Menu and Pointers allow easy navigation.
+WIMP
+Who does a GUI suit and where is it used? - On a home or business computer. Suits a range of ability
+What is a CLI? - Command line interface
+Who uses a CLI and what for? - Advanced programmers.. to create new programs/coding
+Whats a MDI - Menu driven interface
+Who uses a MDI? - Machines like ATM and self checkout
+Why are MDI useful? - There are only limited options
+ Easy to understand (users cant get lost)
+ Users cant break into the system
+What 3 things does memory management control? - RAM
+Cache
+Virtual memory
+How does memory management make a computer run more efficiently? - Free up memory
+Optimises it
+Controls which memory is used
+What is a software driver? - Gives information to OS on how to control the peripheral
+What the sequence for peripheral management? - OS -----> Software driver -------> Peripheral
+What is multi-taking? - Allowing the user to have multiple windows open
+How does multitasking works and what makes it more efficient? - Programs are loaded in the RAM
+More RAM and Multiples cores in the CPU
+What is a virus? - A program designed to harm a computer
+How does the operating system protect against viruses? - Anti-virus
+How does a Anti-virus software deal with viruses? - Searches for and deletes viruses
+What 3 things does a Firewall do? - Prevents unauthorised access
+Checks incoming messages
+Quarantines dodgy messages
+What is a library and what its advantages? - Pre-made code a user inserts into there code
+Makes program more simple and it works
+What is a SDE and what does it allow the programmer to do? - Software development environment
+Create, Test and De-bug code
+What is a system restore? - Rolling back the system to a previous version to recover from a error
+What is a control panel? - A panel containing system settings
+What 5 things does a control panel allow the user to do? - Add Hardware
+Add or remove software
+Manage fonts
+Manage accessibility options
+Set-up WiFi
+What 3 things does a disk organisation software do? - Format
+Transfer
+Defragmentation
+What is Formatting? - Making a storage devices able to be used on the system
+What is Defragmentation? - Putting all the files inside the hard drive in order, so the system runs more efficiently
+Why do we compress images? - Save space
+Save on upload time
+Why do we compress downloads? - Reduce overall size (save space)
+Faster transmission
+What 2 things does a system clean up tool do? - Finds temporary, unused or unnecessary files and deletes them 
+Auto-updates to keep software up to data and fix bugs
+What does system maintenance provide? - System info
+Diagonostoics
+What are the 5 types of application software and example + uses? - Word- Writing letters/essay (Microsoft word)
+Presentation- Presentation (Microsoft PowerPoint)
+Spreadsheet- Calculating/accounting (Microsoft excel)
+Graphics- Editing or making images (Adobe Photoshop)
+Database- Sorting and organising data (Microsoft Access)
+What is a flat-file database? - One table
+Can easily become complex (repeated data + lots of entry's)
+Difficult to manage read
+What is a relational database? - Multiple tables
+Easy to read (search key fields)
+No repeated data
+4. Networks - 
+What is the FTP protocol? - How files are transferred over the internet
+What is the HTTP protocol? - How web servers and bowers communicate
+What is a protocol stack? and give a example - Collection of protocols to carry out a process
+
+Application layer = Handles details
+Transport layer = Flow of data
+Network layer = Routing and address info
+Link layer = How to interface with network
+What is a network? - When two or more computers are connected together
+What is a LAN network and where is it most likely to be used? - Local area network
+School or business
+What is a WAN network and where is it most likely to be used? - Wide area network
+Country internet
+What are the advantages of Networks? - File transfer 
+Resource sharing
+Back up are easy to do
+What are the disadvantages of Networks? - Virus spread quickly
+Hackers can gain entry to everything
+If server fails everything fails
+What does a ring topology look like? - Computers connected by cable in a ring
+What are the advantages of a ring topology? - Cheap 
+Easy to add new devices
+No data collisions (data flows one way)
+What are the disadvantages of a ring topology? - If one cable breaks whole network does
+Long cables are common so signal degrades
+What does a bus topology look like? - One main cable with computers coming off it
+What are the advantages of a bus topology? - Cheap 
+If a workstation cable breaks network inst affected
+What are the disadvantages of a bus topology? - If main cable breaks the whole network breaks
+Cant handle heavy traffic (lots of data collisions)
+What does a star topology look like? - One main server with lots of computer coming off it
+What are the advantages of a star topology? - Fast
+No collisions
+If a cable breaks whole network inst affected
+What are the disadvantages of a star topology? - Expensive
+If server fails the whole network does
+What does a Network interface card do in a network? - Connects a computer to the network
+What does a cable do in a network - Join the network together
+What does a Bridge do in a network? - Joins similar networks together
+What does a Gateway do in a network? - Joins different networks together
+What does a Hub do in a network? - Connects computer together
+What are the problems with a Hub? - Slow
+Data randomly sent
+What does a Switch do in a network? - Connects computer together
+What are the advantages of a network? - Fast
+Data precisely sent
+What does a Wireless access point do in a network? - Allow WiFi connection
+What does a Router do in a network? - Finds the most efficient route for data transfer
+What are the 4 rules for passwords on a network? - 8 Characters
+Upper and lower case letter
+Numbers
+Symbols
+What are the 3 user access levels? - Read
+Write
+Execute
+Why is encryption used? - Make data transmission secure
+How is encryption used? - Data is encrypted
+Only people that are wanted to revive it have the key to de-crypt the data
+What is a Network policy? - Companies own rules for using the network
+What are the 5 acceptable user policy's? - No spam
+No hacking
+No personal use
+Respectful language
+Manage and maintain password security
+What are the two disaster relief policy's? - Back-up that can be loaded up
+Off site copy of network
+5. Internet and communications - 5. Internet and communications
+How fast is a modem? - Slow
+(device used for turning data into analogue)
+Why are routers used? - To get multiple outputs from one input
+What are the advantages of routers? - You can use either Wi-fi or Ethernet
+What is lossless compression? - Compressing a file so that you can get the original file back
+What is lossy compression? - Compressing a file so that you cant get the original file back
+Why is encryption used? - So only specific people can read the messages
+What is hacking? - the practise of gaining unauthorised access to a computer
+What is a IP Address? - Unique identifier for a computer on a network
+What is a Host ID? - Identifies a specific device on a network
+What is a Network ID? - Identifies the network a device can be found on
+What is a MAC address? - Unique address assigned to the device by the manufacture for LAN
+What is the file standard for Web pages? - HTML/ .htm
+What is the file standard for High quality photos(lossy)? - JPEG/ .jpg
+What is the file standard for Animated images? - GIF/ .gif
+What is the file standard for Compress photo (lossless)? - PNG/ .png
+What is the file standard for Document transfer? - PDF/ .pdf
+What is the file standard for a Audio file? - MP3/ .mp3
+What is the file standard for Audio and Video file? - MPEG/ .mpg
+What is a Domain name? - Easy to remember words for a website instead of its IP
+What is a DNS and what does it do? - Domain Name Server
+Translates a domain name into the websites IP
+Describe the process of routing and packet switching - 1. TCP protocol breaks down the file into packets
+2. A check code is created for the packets
+3. Each packet contains the destination IP, Host ID and Network ID
+4. Series of routers are used to transfer the packet
+5. At the destination the TCP protocol resembles the file.
+Why are files broken into packets the process of routing and packet switching? - So hackers cant understand them and to make it easier to send
+What is the size of the packets in the process of routing and packet switching? - 128KB
+Why is a check code used in the process of routing and packet switching? - To ensure their are no error is the code if there is the data is rejected and resent
+What do routers do in the process of routing and packet switching? - To find the most effective and efficient route
+Why are Hyperlinks used on Web pages? - To navigate in the web page or to other web pages
+What do cookies do? - Tracks the user searches via their IP
+Why are cookies used? - To give the user special offers based on their searches
+What is a search engine? - System designed to search the World Wide Web for specific pages
+Why do search engines use web crawlers? - To update their databases with infomation on:
+The Websites URL
+Text and keywords in the document
+Main topic of the document
+Search frequency of the website
+How do search engines use keywords and phrases when users search something? - Return pages with those keywords or quotes
+How do search engines use the Boolean logic "and" when users search something? - Only pages that contain all of the searched words
+How do search engines use the Boolean logic "or" when users search something? - Pages that contain any of the searched words
+How do search engines use the Boolean logic "not" when users search something? - Pages that don't contain the word searched
+How do search engines use the Boolean logic "Number range" when users search something? - Pages containing the number searched
+How do search engines use wildcards when users search something? - Fill in the blanks / relevant searches
+Explain how a parity bit works? - Extra 1 or 0 is added to make the bit even or odd
+If the parity bit inst correct (bit line inst either odd or even) then the data is rejected and resent
+7. Programming - 
+What is machine code? - Set of binary instructions used by the CPU
+What is low-level assembly code? - A programming language that consist of some words but mostly is just instruction for machine code, written in code
+What is high-level assembly code? - A programming language which is mostly words and some mathematical calculations, which is very easy to code and understand
+What are constants? - Pre-set code that doesn't change
+What are literals? - Values that are used in code
+What are identifiers? - Data that has been given a name to make it easily understandable
+What are variables? - Stored data that can change when the code is running
+What are data types and what are the 5 datatypes? - How data is stored
+Character
+Integer
+Real
+Boolean
+String
+What is a declaration? - Where constants, variables and arrays are identified so memory can be allocated for them
+What is a array? - Collection of a similar data type. But each element can be treated as a separate variable
+What do assemblers do? - Turn source code into machine code
+What are the advantages of assemblers? - Fast when running
+What are the disadvantages of assemblers? - Complex and difficult to change your code
+What do compilers do? - Turn source code into object code
+What are the advantages of compilers? - No source code needed after conversion
+What are the disadvantages of compilers? - Slow to convert
+What do interpreters do? - Execute source code directly
+What are the advantages of source code? - You can easily change your code
+What are the disadvantages of source code? - Slow when running
+What is a syntax error? - When a word or symbol is wrong
+What is a run-time error? - When the program crashes without completing
+What is a logical error? - Where a output is incorrect or unexpected
+What is a rounding error? - Where a number is replaced with a approximate value
+What are some strategy's to avoid errors? - Indenting code
+Unit testing
+Modular code
+Comments
+Reviewing code
+De-bug tools
+Back-ups
+9. Ethical, Social and legal aspects - 
+What are the 8 parts of the data protection act (STARS RLE)? - Safety (Only used by necessary people and sold)
+Time (Only kept for the necessary time)
+Accurate (Up to date and correct
+Rights (The right to see and change)
+Specific (Only whats required)
+
+Relevant (Only used for whats required)
+Lawful (Data must be obtained lawfully)
+Eu (Data must be kept in EU)
+When was DPA introduced? - 1984
+What are the 3 levels of the computer misuse act? - Entering 
+Stealing
+Harming
+When was the computer misuse act? - 1990
+What are the 3 parts of the Copyright, Design and patents act? (DUR) - Stoping people
+ Distributing
+ Using illegally
+ Replicate
+When was the Copyright, Design and patents act introduced? - 1988
+What are the 8 parts Engineering of code ethics?
+(CMP PJP CS) - Public
+Client 
+Product
+Judgement
+Management
+Professional
+Colleagues
+Self
+
+
