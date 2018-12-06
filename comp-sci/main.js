@@ -321,12 +321,12 @@ function verifyAnswer() {
 			gainHeight(Math.round((canvas.height - rocket.y) / (canvas.height / 100)));
 		}
 		else { // incorrect
+			questionNumber = "exact" + questionNumber; // reset answer so it works with displayAnswer
 			if (suddenDeath) {
 				loseGame();
 			}
 			else {
 				rocket.speed *= 2;
-				questionNumber = "exact" + questionNumber;
 			}
 		}
 	}

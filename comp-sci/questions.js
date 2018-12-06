@@ -240,7 +240,7 @@ var data  = {
 		},
 		{
 			question: "List some common uses of the GPU. <i>more answers give you more points</i>",
-			answer: ["gaming", "data", "cryptocurrency"],
+			answer: ["gaming", "data", "cryptocurrency", "render"],
 			answerType: "match",
 			required: 1,
 		},
@@ -305,18 +305,66 @@ var data  = {
 		},
 		// tbd: truth tables, simplify, simplification rules, simplify this with + and .
 	],
+	communication: [
+		{
+			question: "What is a 'set of rules that govern network operations' knwon as?",
+			answer: "protocol",
+			answerType: "exact",
+		},
+		{
+			question: "List a common protocol or protocol family. <i>more answers give you more points</i>",
+			answer: ["tcp", "ip", "http", "https", "ftp", "pop", "imap", "smtp", "wi-fi", "ethernet"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "What does TCP stand for?",
+			answer: "transmission control protocol",
+			answerType: "exact",
+		},
+		{
+			question: "What does HTTP stand for?",
+			answer: "hypertext transfer protocol",
+			answerType: "exact",
+		},
+		{
+			question: "What does HTTPS stand for?",
+			answer: "hypertext transfer protocol secure",
+			answerType: "exact",
+		},
+		{
+			question: "What does FTP stand for?",
+			answer: "file transfer protocol",
+			answerType: "exact",
+		},
+		{
+			question: "What does POP stand for?",
+			answer: "post office protocol",
+			answerType: "exact",
+		},
+		{
+			question: "What does IMAP stand for?",
+			answer: "internet message access protocol",
+			answerType: "exact",
+		},
+		{
+			question: "What does SMTP stand for?",
+			answer: "simple mail transfer protocol",
+			answerType: "exact",
+		},
+	],
 	data: [
 	// also includes hex, binary, denary conversion, addition of binary
 	// tbd: binary shift
 		{
 			question: "What is the measurement of sampling rate?",
-			answer: ["hertz"],
+			answer: ["hertz", "hz"],
 			answerType: "match",
 			required: 1,
 		},
 		{
 			question: "Which <strong>three</strong> factors affect file size of a sound file?",
-			answer: ["length", "sample rate", "resolution"],
+			answer: ["length", "sample rate", "sampling rate", "resolution"],
 			answerType: "match",
 			required: 3,
 		},
@@ -418,6 +466,11 @@ var data  = {
 			answerType: "exact",
 		},
 		{
+			question: "What data type is '@'? <br> A: Integer <br> B: Real <br> C: Boolean <br> D: Character <br> E: String",
+			answer: "d",
+			answerType: "exact",
+		},
+		{
 			question: "What is the name of an array that does not have a fixed length?",
 			answer: ["dynamic"],
 			answerType: "match",
@@ -461,19 +514,29 @@ var data  = {
 			required: 1,
 		},
 		{
-			question: "List a type of systems software. <i>more answers give you more points</i>",
+			question: "List a type of system software. <i>more answers give you more points</i>",
 			answer: ["device driver", "utility software", "operating system"],
 			answerType: "match",
 			required: 1,
 		},
 		{
-			question: "Which type of systems software: <ul><li>Is loaded by the computer after the initial boot-up</li><li>Controls the operations of the hardware</li><li>Manages all other software</li></ul>?",
+			question: "Which type of system software: <ul><li>Is loaded by the computer after the initial boot-up</li><li>Controls the operations of the hardware</li><li>Manages all other software</li></ul>",
 			answer: "operating system",
 			answerType: "exact",
 		},
 		{
+			question: "Which type of system software: <ul><li>Helps to manage, maintain, and control the computer's resources</li></ul>",
+			answer: "utility software",
+			answerType: "exact",
+		},
+		{
+			question: "Which type of system software: <ul><li>Controls a particular device connected to a computer system</li><li>Is controlled by the operating system</li></ul>",
+			answer: "device driver",
+			answerType: "exact",
+		},
+		{
 			question: "Give a role of the operating system. <i>more answers give you more points</i>",
-			answer: ["user interface", "memory", "multitask", "peripheral management", "drivers", "user", "file"],
+			answer: ["user interface", "memory", "multitask", "peripheral", "drivers", "user", "file", "processes"],
 			answerType: "match",
 			required: 1,
 		},
@@ -499,8 +562,54 @@ var data  = {
 			answerType: "exact",
 		},
 		{
-			question: "Give an example of an NLI. <i>more answers give you more points</i>",
+			question: "Give a common example of an NLI. <i>more answers give you more points</i>",
 			answer: ["siri", "alexa", "cortana", "google assistant"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Give a common example of a peripheral. <i>more answers give you more points</i>",
+			answer: ["mouse", "keyboard", "microphone", "printer", "scanner", "monitor", "touchscreen", "camera"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which is NOT a peripheral? <br> A: Mouse <br> B: Printer <br> C: Hard drive <br> D: USB stick",
+			answer: "b",
+			answerType: "exact",
+		},
+		{
+			question: "Give a task that utility software may be responsible for. <i>more answers give you more points</i>",
+			answer: ["file conversion", "file repair", "compression", "backup", "encryption", "defragmentation", "antivirus"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which is the sequence of bits used to encrypt or decrypt data? <br> A: Encryption key <br> B: Encryption algorithm <br> C: Plain text <br> D: Cypher text",
+			answer: "b",
+			answerType: "exact",
+		},
+		{
+			question: "Which type of encryption uses the same encryption key to encrypt and decrypt the data?",
+			answer: ["symmetric"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which type of encryption uses a different encryption key to encrypt and decrypt the data?",
+			answer: ["asymmetric"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which stage of the encryption/decryption process is a <strong>private key</strong> used for in asymmetric encryption?",
+			answer: ["decrypt"],
+			answerType: "match",
+			required: 1,
+		},
+		{
+			question: "Which type of backup only backs up files that have changed since the last backup was carried out?",
+			answer: ["incremental"],
 			answerType: "match",
 			required: 1,
 		},
