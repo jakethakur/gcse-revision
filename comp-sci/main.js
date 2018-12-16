@@ -10,7 +10,8 @@ let questionCorrect = false; // is the rocket currently moving upwards?
 // import questions from js file (imported for speed)
 const questions = data;
 // address of current question
-let questionTopic = topics[randomNum(topics.length)]; 
+let questionTopic = topics[randomNum(topics.length)];
+let questionSubtopic = null;
 let questionNumber = null;
 let suddenDeath = false; // if the question is sudden death or not
 
@@ -78,7 +79,7 @@ function gainHeight (heightGained, displayMoreAnswers) {
 	rocket.speed = rocket.baseSpeed; // update rocket speed
 	
 	if (displayMoreAnswers) {
-		// more possible corerct answers
+		// more possible correct answers
 		displayAnswer();
 	}
 	else {
@@ -109,6 +110,7 @@ function pickQuestion () {
 		let booleanLogic = booleanQuestion(4);
 		document.getElementById("question").innerHTML = "Evaluate: " + booleanLogic.question + "<br><h5><img src='./assets/danger.png' height=30px>  Question is sudden death - get it wrong and you're out!</h5>";
 		questionNumber = "exact" + booleanLogic.answer;
+		questionSubtopic = "boolean logic";
 		suddenDeath = true; // boolean logic questions are all sudden death
 	}
 	
@@ -124,30 +126,36 @@ function pickQuestion () {
 				foo = binaryToDenary(5);
 				question = "Denary to binary: " + foo.denary;
 				answer = "exact" + foo.binary;
+				questionSubtopic = "denary to binary";
 				break;
 			case 1: // binary to denary
 				foo = binaryToDenary(5);
 				question = "Binary to denary: " + foo.binary;
 				answer = "exact" + foo.denary;
+				questionSubtopic = "binary to denary";
 				break;
 			case 2: // denary to hex
 				foo = denaryToHex(2);
 				question = "Denary to hexadecimal: " + foo.denary;
 				answer = "exact" + foo.hex;
+				questionSubtopic = "denary to hexadecimal";
 				break;
 			case 3: // hex to denary
 				foo = denaryToHex(2);
 				question = "Hexadecimal to denary: " + foo.hex;
 				answer = "exact" + foo.denary;
+				questionSubtopic = "hexadecimal to denary";
 				break;
 			case 4: // add binary
 				foo = addBinary(randomNum(6), randomNum(6));
 				question = "Add the binary values: " + foo.binary1 + " and " + foo.binary2;
 				answer = "exact" + foo.answer;
+				questionSubtopic = "binary addition";
 				break;
 			default: // questions (currently twice as likely to appear)
-				answer = randomNum(questions[questionTopic].length);
+				answer = randomNum(questions[questionTopic].length); // question number
 				question = questions[questionTopic][answer].question;
+				questionSubtopic = questions[questionTopic][answer].topic;
 		}
 		
 		document.getElementById("question").innerHTML = question;
@@ -159,6 +167,7 @@ function pickQuestion () {
 	else {
 		questionNumber = randomNum(questions[questionTopic].length);
 		document.getElementById("question").innerHTML = questions[questionTopic][questionNumber].question;
+		questionSubtopic = questions[questionTopic][questionNumber].topic;
 		if (questions[questionTopic][questionNumber].suddenDeath === true) {
 			// sudden death question
 			suddenDeath = true;
