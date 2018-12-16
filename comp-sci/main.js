@@ -512,7 +512,7 @@ function checkHighScore(score) {
 	let scoreChanged = false;
 	if (scoreArray !== null) {
 		scoreArray.forEach((savedScore, i) => {
-			if (score > savedScore) {
+			if (parseInt(score, 10) > parseInt(savedScore, 10)) { // parsed to int because scores are saved as string by default in local storage which messes up > operator
 				let oldSavedScore = savedScore;
 				scoreArray[i] = score;
 				score = oldSavedScore; // save old saved score for being reinserted below
