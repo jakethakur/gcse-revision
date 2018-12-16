@@ -1127,7 +1127,7 @@ var data  = {
 		},
 		{
 			question: "Which is NOT a peripheral? <br> A: Mouse <br> B: Printer <br> C: Hard drive <br> D: USB stick",
-			answer: "b",
+			answer: "c",
 			answerType: "exact",
 			topic: "peripherals",
 		},
@@ -1140,7 +1140,7 @@ var data  = {
 		},
 		{
 			question: "Which is the sequence of bits used to encrypt or decrypt data? <br> A: Encryption key <br> B: Encryption algorithm <br> C: Plain text <br> D: Cypher text",
-			answer: "b",
+			answer: "a",
 			answerType: "exact",
 			topic: "encryption",
 		},
