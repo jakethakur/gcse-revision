@@ -15,6 +15,11 @@ let questionSubtopic = null;
 let questionNumber = null;
 let suddenDeath = false; // if the question is sudden death or not
 
+let topicPractice = JSON.parse(localStorage.getItem("topicPractice"));
+if (topicPractice === null) {
+	topicPractice = {};
+}
+
 // define player object
 let rocket = {
 	x: canvas.width/2,
@@ -458,6 +463,9 @@ function loseGame() {
 	// high scores
 	checkHighScore(height);
 	displayScores();
+	
+	// topics that need practice
+	updateTopicPractice();
 }
 
 function displayAnswer() {
@@ -559,4 +567,20 @@ function parseArray(JSON) {
 		return elements;
 	}
 	return JSON;
+}
+
+// add a new topic to the list of topics that need practice
+function updateTopicPractice() {
+	if (topicPractice[questionSubtopic] === undefined) {
+		topicPractice[questionSubtopic] = 1;
+	}
+	else {
+		topicPractice[questionSubtopic]++;
+		// notify the user if they should practice it
+		if (topicPractice[questionSubtopic] % 3 === 0) {
+			alert("You have made a few mistakes on questions of the topic '" + questionSubtopic + "'. Perhaps consider revising it?");
+		}
+	}
+	// update localStorage
+	localStorage.setItem("topicPractice", JSON.stringify(topicPractice));
 }
