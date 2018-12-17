@@ -1112,15 +1112,16 @@ var data  = {
 		},
 		{
 			question: "List a type of system software. <i>more answers give you more points</i>",
-			answer: ["device driver", "utility software", "operating system"],
+			answer: ["device driver", "utility software", "operating system", "os"],
 			answerType: "match",
 			required: 1,
 			topic: "misc software",
 		},
 		{
 			question: "Which type of system software: <ul><li>Is loaded by the computer after the initial boot-up</li><li>Controls the operations of the hardware</li><li>Manages all other software</li></ul>",
-			answer: "operating system",
-			answerType: "exact",
+			answer: ["operating system", "os"],
+			answerType: "match",
+			required: 1,
 			topic: "misc software",
 		},
 		{
@@ -1574,15 +1575,16 @@ var data  = {
 		},
 		{
 			question: "List a type of hacker. <i>more answers give you more points</i>",
-			answer: ["white-hat", "black-hat", "grey-hat"],
+			answer: ["white-hat", "white hat", "black-hat", "black hat", "grey-hat", "grey hat"],
 			answerType: "match",
 			required: 1,
 			topic: "ethical impacts",
 		},
 		{
 			question: "Which type of hacker is seen as most ethical?",
-			answer: "white-hat",
-			answerType: "exact",
+			answer: ["white-hat", "white hat"],
+			answerType: "match",
+			required: 1,
 			topic: "ethical impacts",
 		},
 		{
