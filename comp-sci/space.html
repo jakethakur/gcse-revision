@@ -17,6 +17,21 @@
 		<h3 id="highScores"></h3>
 		
 		<p>Found a typo or an answer that isn't accepted but should be? Please help out by <a href="https://github.com/jakethakur/gcse-revision/issues/new" target="_blank">submitting an issue</a> :)</p>
+			
+		<button type="button" onclick="settingsToggle()">Topic selection</button>
+		
+		<div id="settingsDiv" hidden>
+			<p>Select which topics you would like to appear:</p>
+			<input type="checkbox" name="topic1" value="hardware" checked> Hardware<br>
+			<input type="checkbox" name="topic2" value="logic" checked> Boolean Logic<br>
+			<input type="checkbox" name="topic3" value="communication" checked> Communications<br>
+			<input type="checkbox" name="topic4" value="data" checked> Organisation of Data<br>
+			<input type="checkbox" name="topic5" value="software" checked> Systems Software<br>
+			<input type="checkbox" name="topic6" value="misc" checked> Misc (principles of programming, software engineering, program construction)<br>
+			<input type="checkbox" name="topic7" value="security" checked> Cybersecurity<br>
+			<input type="checkbox" name="topic8" value="impacts" checked> Impacts of Technology<br><br>
+			<button type="button" onclick="settingsSave()">Save preferences</button>
+		</div>
 	</div>
 	
 	<script type="text/javascript" src="./questions.js"></script>

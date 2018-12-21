@@ -5,7 +5,7 @@
 
 #highScores {
 	padding-top: 30px;
-	/* tbd replace high scores below game */
+	/* tbd move high scores to below game */
 }
 
 #answerPane {
@@ -18,4 +18,10 @@ h2, h3, h4, h5 {
 
 body {
 	font-family: sans-serif;
+}
+
+#settingsDiv {
+	border: 1px solid black;
+	padding: 10px;
+	width: 600px;
 }

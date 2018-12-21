@@ -5,7 +5,7 @@
 // match question: user must enter the answer word within their answer - answer must be an array
 // required: number of keywords required for match question (any over this they are given extra points for)
 
-var topics = ["hardware", "logic", "communication", "data", "software", "misc", "security", "ethics"];
+var topics = ["hardware", "logic", "communication", "data", "software", "misc", "security", "impacts"];
 
 var data  = {
 	hardware: [
@@ -1552,7 +1552,7 @@ var data  = {
 			topic: "cookies",
 		},
 	],
-	ethics: [
+	impacts: [
 		{
 			question: "Which best describes 'ethics'? <br> A: How something works <br> B: A set of moral principles <br> C: What governments think about an issue <br> D: A fill-up for a GCSE spec ",
 			answer: "b",

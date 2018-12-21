@@ -584,3 +584,43 @@ function updateTopicPractice() {
 	// update localStorage
 	localStorage.setItem("topicPractice", JSON.stringify(topicPractice));
 }
+
+//
+// Settings
+//
+
+function settingsToggle() {
+	document.getElementById("settingsDiv").hidden = !document.getElementById("settingsDiv").hidden;
+}
+
+function settingsSave() {
+	// update topics array
+	let topicsArray = []
+	let checkboxes = document.querySelectorAll('input[type=checkbox]:checked'); // maybe change to just the checkboxes for topic? TBD
+
+	for (let i = 0; i < checkboxes.length; i++) {
+		topicsArray.push(checkboxes[i].value);
+	}
+	topics = topicsArray;
+	
+	// update local storage
+	localStorage.setItem("topicsSelected", stringifyArray(topics));
+}
+
+// update setting selection when page is refreshed (to what is saved in local storage)
+// all checked is default (for if there is no local storage because user hasn't changed settings before)
+function settingsUpdate() {
+	let storedTopics = localStorage.getItem("topicsSelected");
+	if (storedTopics !== null) {
+		// settings have been altered before
+		storedTopics = parseArray(storedTopics); // now we know it is an array, it can be parsed
+		let checkboxes = document.querySelectorAll('input[type=checkbox]'); // maybe change to just the checkboxes for topic? TBD
+		for (let i = 0; i < checkboxes.length; i++) {
+			if (!storedTopics.includes(checkboxes[i].value)) {
+				checkboxes[i].checked = false;
+			}
+		}
+	}
+}
+
+settingsUpdate();
