@@ -111,7 +111,7 @@ function pickQuestion () {
 	questionTopic = topics[randomNum(topics.length)];
 	
 	// chance of giving a boolean logic question instead of a pre-written question
-	if(questionTopic == "logic" && randomNum(2) == 0) {
+	if (questionTopic == "logic" && randomNum(2) == 0) {
 		let booleanLogic = booleanQuestion(4);
 		document.getElementById("question").innerHTML = "Evaluate: " + booleanLogic.question + "<br><h5><img src='./assets/danger.png' height=30px>  Question is sudden death - get it wrong and you're out!</h5>";
 		questionNumber = "exact" + booleanLogic.answer;
@@ -120,8 +120,8 @@ function pickQuestion () {
 	}
 	
 	// data questions are special...
-	else if(questionTopic == "data") {
-		let random = randomNum(7); // number of possible data question types (outside of prewritten questions)
+	else if (questionTopic == "data") {
+		let random = randomNum(8); // number of possible data question types (outside of prewritten questions)
 		let foo;
 		let question;
 		let answer;
@@ -156,6 +156,13 @@ function pickQuestion () {
 				question = "Add the binary values: " + foo.binary1 + " and " + foo.binary2;
 				answer = "exact" + foo.answer;
 				questionSubtopic = "binary addition";
+				break;
+			case 5: // binary shift
+				foo = binaryShift(8); // 8 digit binary number
+				question = "Binary shift: " + foo.binary + " " + foo.bitShift + " spaces " + foo.direction + "<br><h5><img src='./assets/danger.png' height=30px>  Question is sudden death - get it wrong and you're out!</h5>";
+				answer = "exact" + foo.answer;
+				questionSubtopic = "binary shift";
+				suddenDeath = true;
 				break;
 			default: // questions (currently twice as likely to appear)
 				answer = randomNum(questions[questionTopic].length); // question number
@@ -196,7 +203,7 @@ function randomNum(upper) {
 }
 
 // make evaluate boolean statement question - part of logic
-function booleanQuestion(items) {
+function booleanQuestion (items) {
 	let operators = [" AND "," OR "," XOR "];
 	let operatorsJs = ["&","|","^"];
 	
@@ -246,11 +253,6 @@ function booleanQuestion(items) {
 		
 		// finished
 		if(i == items - 1) {
-			/*console.log(question);
-			console.log(questionEval);
-			console.log(eval(questionEval));
-			console.log("");*/
-			
 			return({
 				question: question,
 				answer: eval(questionEval),
@@ -260,7 +262,7 @@ function booleanQuestion(items) {
 }
 
 // make binary to denary question - part of data
-function binaryToDenary(binaryDigits) { //5
+function binaryToDenary (binaryDigits) { //5
 	// build binary number
 	let binary = "1";
 	for(let i = 1; i < binaryDigits; i++) {
@@ -279,7 +281,7 @@ function binaryToDenary(binaryDigits) { //5
 }
 
 // make denary to hex question - part of data
-function denaryToHex(denaryDigits) { //2
+function denaryToHex (denaryDigits) { //2
 	// build denary number
 	let denary = "";
 	for(let i = 0; i < denaryDigits; i++) {
@@ -302,7 +304,7 @@ function denaryToHex(denaryDigits) { //2
 }
 
 // make binary addition question - part of data
-function addBinary(binaryDigits1, binaryDigits2) {
+function addBinary (binaryDigits1, binaryDigits2) {
 	// build binary number 1
 	let binary1 = "1";
 	for(let i = 1; i < binaryDigits1; i++) {
@@ -323,6 +325,66 @@ function addBinary(binaryDigits1, binaryDigits2) {
 		binary1: binary1,
 		binary2: binary2,
 		answer: answer,
+	});
+}
+
+// make binary shfit question - part of data
+function binaryShift (length) {
+	// build binary number
+	let binary = "";
+	for (let i = 0; i < length; i++) {
+		binary += randomNum(2);
+	}
+	
+	// generate bit shift
+	let bitShift = randomNum(4) + 1; // between 1 and 4 digit shift
+	
+	// generate shift direction and answer
+	let direction;
+	let answer;
+	if (randomNum(2) === 0) {
+		// left
+		direction = "left";
+		answer = parseInt(binary, 2); // parse to denary (bitwise binary shift works in denary)
+		for (let i = 0; i < bitShift; i++) {
+			// shift the correct number of digits
+			answer = answer << 1;
+		}
+		answer = answer.toString(2); // convert back to binary
+		// truncate it at the left
+		if (answer.length > 8) {
+			answer = answer.slice(answer.length - 8);
+		}
+		// add zeros to the left
+		else if (answer.length < 8) {
+			for (let i = answer.length; i < 8; i++) {
+				answer = "0"+answer;
+			}
+		}
+	}
+	else {
+		// right
+		// zero-fill is used
+		direction = "right";
+		answer = parseInt(binary, 2); // parse to denary (bitwise binary shift works in denary)
+		for (let i = 0; i < bitShift; i++) {
+			// shift the correct number of digits
+			answer = answer >>> 1;
+		}
+		answer = answer.toString(2); // convert back to binary
+		// add zeros to the left
+		if (answer.length < 8) {
+			for (let i = answer.length; i < 8; i++) {
+				answer = "0"+answer;
+			}
+		}
+	}
+	
+	return({
+		binary: binary,
+		answer: answer,
+		direction: direction,
+		bitShift: bitShift,
 	});
 }
 
