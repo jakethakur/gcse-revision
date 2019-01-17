@@ -132,30 +132,35 @@ function pickQuestion () {
 				question = "Denary to binary: " + foo.denary;
 				answer = "exact" + foo.binary;
 				questionSubtopic = "denary to binary";
+				suddenDeath = false;
 				break;
 			case 1: // binary to denary
 				foo = binaryToDenary(5);
 				question = "Binary to denary: " + foo.binary;
 				answer = "exact" + foo.denary;
 				questionSubtopic = "binary to denary";
+				suddenDeath = false;
 				break;
 			case 2: // denary to hex
 				foo = denaryToHex(2);
 				question = "Denary to hexadecimal: " + foo.denary;
 				answer = "exact" + foo.hex;
 				questionSubtopic = "denary to hexadecimal";
+				suddenDeath = false;
 				break;
 			case 3: // hex to denary
 				foo = denaryToHex(2);
 				question = "Hexadecimal to denary: " + foo.hex;
 				answer = "exact" + foo.denary;
 				questionSubtopic = "hexadecimal to denary";
+				suddenDeath = false;
 				break;
 			case 4: // add binary
 				foo = addBinary(randomNum(6), randomNum(6));
 				question = "Add the binary values: " + foo.binary1 + " and " + foo.binary2;
 				answer = "exact" + foo.answer;
 				questionSubtopic = "binary addition";
+				suddenDeath = false;
 				break;
 			case 5: // binary shift
 				foo = binaryShift(8); // 8 digit binary number
@@ -168,11 +173,11 @@ function pickQuestion () {
 				answer = randomNum(questions[questionTopic].length); // question number
 				question = questions[questionTopic][answer].question;
 				questionSubtopic = questions[questionTopic][answer].topic;
+				suddenDeath = false;
 		}
 		
 		document.getElementById("question").innerHTML = question;
 		questionNumber = answer;
-		suddenDeath = false;
 	}
 	
 	// get a question from questions.js
@@ -686,3 +691,4 @@ function settingsUpdate() {
 }
 
 settingsUpdate();
+settingsSave();
