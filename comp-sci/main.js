@@ -81,7 +81,12 @@ function gainHeight (heightGained, displayMoreAnswers) {
 	height += heightGained;
 	questionCorrect = true;
 	rocket.currentPicture = rocket.picture2;
-	rocket.speed = rocket.baseSpeed; // update rocket speed
+	rocket.speed = rocket.baseSpeed; // reset rocket speed
+	
+	// rocket speed is 25% slower if the user has extra time
+	if (document.getElementById("extraTimeBox").checked) {
+		rocket.speed /= 1.25;
+	}
 	
 	if (displayMoreAnswers) {
 		// more possible correct answers
@@ -164,7 +169,7 @@ function pickQuestion () {
 				break;
 			case 5: // binary shift
 				foo = binaryShift(8); // 8 digit binary number
-				question = "Binary shift: " + foo.binary + " " + foo.bitShift + " spaces " + foo.direction + "<br><h5><img src='./assets/danger.png' height=30px>  Question is sudden death - get it wrong and you're out!</h5>";
+				question = "Binary shift: " + foo.binary + " " + foo.direction + " " + foo.bitShift + " spaces." +  "<br><h5><img src='./assets/danger.png' height=30px>  Question is sudden death - get it wrong and you're out!</h5>";
 				answer = "exact" + foo.answer;
 				questionSubtopic = "binary shift";
 				suddenDeath = true;
@@ -435,7 +440,7 @@ function verifyAnswer() {
 		for (let i = 0; i < questions[questionTopic][questionNumber].answer.length; i++) { // iterate through possible answers
 			let possibleAnswer = questions[questionTopic][questionNumber].answer[i];
 			
-			if (answer.constructor === Array) {
+			if (possibleAnswer.constructor === Array) {
 				// multiple accepted answers (but should only be scored at most once for this array)
 				// e.g. ["keylogger", "key-logger", "key logger"]
 				for (let x = 0; x < possibleAnswer.length; x++) {
@@ -571,8 +576,19 @@ function displayAnswer() {
 		correctAnswer = "The correct answer was: " + '"' + questionNumber + '"';
 	}
 	
+	// keyword answer (only one keyword needed)
+	else if (questions[questionTopic][questionNumber].answerType == "match" && questions[questionTopic][questionNumber].answer.length == 1) {
+		correctAnswer = "The correct answer was: ";
+		
+		let answer = questions[questionTopic][questionNumber].answer[0];
+		if (answer.constructor === Array) {
+			answer = answer[0]; // if there are multiple variants of the same answer, only display the first
+		}
+		correctAnswer += '"' + answer + '"';
+	}
+	
 	// keyword answer (must say all keywords)
-	else if (questions[questionTopic][questionNumber].answerType == "match" && questions[questionTopic][questionNumber].answer.length == questions[questionTopic][questionNumber].answer.required) {
+	else if (questions[questionTopic][questionNumber].answerType == "match" && questions[questionTopic][questionNumber].answer.length == questions[questionTopic][questionNumber].required) {
 		correctAnswer = "The answers were: ";
 		
 		for (let i = 0; i < questions[questionTopic][questionNumber].answer.length; i++) {
@@ -590,7 +606,7 @@ function displayAnswer() {
 	}
 	
 	// keyword answer (doesn't have to say all keywords)
-	else if (questions[questionTopic][questionNumber].answerType == "match" && questions[questionTopic][questionNumber].answer.length !== questions[questionTopic][questionNumber].answer.required) {
+	else if (questions[questionTopic][questionNumber].answerType == "match" && questions[questionTopic][questionNumber].answer.length !== questions[questionTopic][questionNumber].required) {
 		correctAnswer = "Some answers you could have said: ";
 		
 		for (let i = 0; i < questions[questionTopic][questionNumber].answer.length; i++) {

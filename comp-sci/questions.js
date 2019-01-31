@@ -5,7 +5,7 @@
 // match question: user must enter the answer word within their answer - answer must be an array
 // required: number of keywords required for match question (any over this they are given extra points for)
 
-var topics = ["hardware", "logic", "communication", "data", "software", "misc", "security", "impacts"];
+var topics = ["hardware", "logic", "communication", "data", "software", "misc", "security", "impacts", "html"];
 
 var data  = {
 	hardware: [
@@ -1796,7 +1796,7 @@ var data  = {
 		},
 		{
 			question: "Which type of hacker is seen as most ethical?",
-			answer: [["white-hat", "white hat"]],
+			answer: [["white-hat", "white hat", "white-hat hacker", "white hat hacker"]],
 			answerType: "match",
 			required: 1,
 			topic: "ethical impacts",
@@ -1917,6 +1917,105 @@ var data  = {
 			answer: "d",
 			answerType: "exact",
 			topic: "environmental impacts",
+		},
+	],
+	html: [
+		// component 2
+		{
+			question: "Which HTML tag delineates the start of the webpage?",
+			answer: "<html>",
+			answerType: "exact",
+			topic: "HTML tags",
+		},
+		{
+			question: "Which HTML tag delineates the start of the document's header?",
+			answer: "<head>",
+			answerType: "exact",
+			topic: "HTML tags",
+		},
+		{
+			question: "Which HTML tag delineates the start of the document's body?",
+			answer: "<body>",
+			answerType: "exact",
+			topic: "HTML tags",
+		},
+		{
+			question: "Which HTML tag delineates the start of a paragraph element?",
+			answer: "<p>",
+			answerType: "exact",
+			topic: "HTML tags",
+		},
+		{
+			question: "Which HTML tag delineates the start of an italicised text element?",
+			answer: "<i>",
+			answerType: "exact",
+			topic: "HTML tags",
+		},
+		{
+			question: "Which HTML tag delineates the start of a bold text element?",
+			answer: "<b>",
+			answerType: "exact",
+			topic: "HTML tags",
+		},
+		{
+			question: "Which HTML tag delineates the start of an underlined text element?",
+			answer: "<u>",
+			answerType: "exact",
+			topic: "HTML tags",
+		},
+		{
+			question: "Which HTML tag delineates the start of an element that is aligned to the centre?",
+			answer: "<center>",
+			answerType: "exact",
+			topic: "HTML tags",
+		},
+		{
+			question: "Which HTML tag delineates the start of a large heading?",
+			answer: "<h1>",
+			answerType: "exact",
+			topic: "HTML tags",
+		},
+		{
+			question: 'Which HTML tag delineates the start of an anchor for a hyperlink? <i>(assume the destination of the hyperlink is "URL")</i>',
+			answer: '<a href="URL">',
+			answerType: "exact",
+			topic: "HTML tags",
+		},
+		{
+			question: "Which HTML tag delineates the start of an unordered list?",
+			answer: "<ul>",
+			answerType: "exact",
+			topic: "HTML tags",
+		},
+		{
+			question: "Which HTML tag delineates the start of a list item?",
+			answer: "<li>",
+			answerType: "exact",
+			topic: "HTML tags",
+		},
+		{
+			question: "Which HTML tag delineates the start of a blockquote?",
+			answer: "<blockquote>",
+			answerType: "exact",
+			topic: "HTML tags",
+		},
+		{
+			question: "Which HTML tag delineates the start of a title element (displayed as the tab name in the browser)?",
+			answer: "<title>",
+			answerType: "exact",
+			topic: "HTML tags",
+		},
+		{
+			question: "Which HTML tag delineates a horizontal rule?",
+			answer: "<hr>",
+			answerType: "exact",
+			topic: "HTML tags",
+		},
+		{
+			question: 'Which HTML tag delineates an image element? <i>(assume the image address is "URL")</i>',
+			answer: '<img src="URL">',
+			answerType: "exact",
+			topic: "HTML tags",
 		},
 	],
 };
