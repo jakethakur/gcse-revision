@@ -178,7 +178,19 @@ function pickQuestion () {
 				answer = randomNum(questions[questionTopic].length); // question number
 				question = questions[questionTopic][answer].question;
 				questionSubtopic = questions[questionTopic][answer].topic;
-				suddenDeath = false;
+				if (questions[questionTopic][questionNumber].suddenDeath === true) {
+					// sudden death question
+					suddenDeath = true;
+					document.getElementById("question").innerHTML += "<br><h5><img src='./assets/danger.png' height=30px>  Question is sudden death - get it wrong and you're out!</h5>"
+				}
+				else {
+					suddenDeath = false;
+				}
+		
+				// extra time
+				if (questions[questionTopic][questionNumber].extraTime !== undefined) {
+					rocket.speed *= questions[questionTopic][questionNumber].extraTime;
+				}
 		}
 		
 		document.getElementById("question").innerHTML = question;
@@ -197,6 +209,11 @@ function pickQuestion () {
 		}
 		else {
 			suddenDeath = false;
+		}
+		
+		// extra time
+		if (questions[questionTopic][questionNumber].extraTime !== undefined) {
+			rocket.speed *= questions[questionTopic][questionNumber].extraTime;
 		}
 	}
 	
@@ -419,7 +436,20 @@ function verifyAnswer() {
 	
 	// exact answer
 	else if (questions[questionTopic][questionNumber].answerType == "exact") {
-		if (document.getElementById("answer").value.toLowerCase() == questions[questionTopic][questionNumber].answer) { // correct
+		let correct = false;
+		if (questions[questionTopic][questionNumber].caseSensitive === true) {
+			// case sensitive
+			if (document.getElementById("answer").value == questions[questionTopic][questionNumber].answer) { // correct
+				correct = true;
+			}
+		}
+		else {
+			if (document.getElementById("answer").value.toLowerCase() == questions[questionTopic][questionNumber].answer.toLowerCase()) { // correct
+				correct = true;
+			}
+		}
+		
+		if (correct) {
 			gainHeight(Math.round((canvas.height - rocket.y) / (canvas.height / 100)));
 		}
 		else { // incorrect

@@ -5,7 +5,7 @@
 // match question: user must enter the answer word within their answer - answer must be an array
 // required: number of keywords required for match question (any over this they are given extra points for)
 
-var topics = ["hardware", "logic", "communication", "data", "software", "misc", "security", "impacts", "html"];
+var topics = ["hardware", "logic", "communication", "data", "software", "misc", "security", "impacts", "html", "greenfoot"];
 
 var data  = {
 	hardware: [
@@ -1318,7 +1318,7 @@ var data  = {
 		},
 		{
 			question: "List a way to debug a program using an IDE. <i>more answers give you more points</i>",
-			answer: ["trace", "break point", "memory inspection", "variable watch"],
+			answer: ["trace", ["break point", "breakpoint"], "memory inspection", "variable watch"],
 			answerType: "match",
 			required: 1,
 			topic: "error debugging",
@@ -2016,6 +2016,124 @@ var data  = {
 			answer: '<img src="URL">',
 			answerType: "exact",
 			topic: "HTML tags",
+		},
+	],
+	greenfoot: [
+		// component 2
+		{
+			question: "How can you get a random number between 0 and 3 in Greenfoot?",
+			answer: "Greenfoot.getRandomNumber(4)",
+			answerType: "exact",
+			topic: "greenfoot enemy movement",
+			caseSensitive: true,
+		},
+		{
+			question: "How can you set the location of an actor in Greenfoot?",
+			answer: "setLocation()",
+			answerType: "exact",
+			topic: "greenfoot player movement",
+			caseSensitive: true,
+		},
+		{
+			question: "How can you get the x value of an actor in Greenfoot?",
+			answer: "getX()",
+			answerType: "exact",
+			topic: "greenfoot player movement",
+			caseSensitive: true,
+		},
+		{
+			question: "How can you set the rotation of an actor in Greenfoot?",
+			answer: "setRotation()",
+			answerType: "exact",
+			topic: "greenfoot player movement",
+			caseSensitive: true,
+		},
+		{
+			question: "How can you move an actor one tile forward in Greenfoot?",
+			answer: "move(1)",
+			answerType: "exact",
+			topic: "greenfoot enemy movement",
+			caseSensitive: true,
+		},
+		{
+			question: "How can you turn an actor 90 degrees in Greenfoot?",
+			answer: "turn(90)",
+			answerType: "exact",
+			topic: "greenfoot enemy movement",
+			caseSensitive: true,
+		},
+		{
+			question: "How can you check if the right key is down in Greenfoot?",
+			answer: 'Greenfoot.isKeyDown("right")',
+			answerType: "exact",
+			topic: "greenfoot player movement",
+			caseSensitive: true,
+		},
+		{
+			question: "How can you check if an actor of the class 'Wombat' is being touched by an actor in Greenfoot?",
+			answer: "isTouching(Wombat.class)",
+			answerType: "exact",
+			topic: "greenfoot removing enemy",
+			caseSensitive: true,
+		},
+		{
+			question: "How can you remove an actor of the class 'Wombat' being touched by an actor in Greenfoot?",
+			answer: "removeTouching(Wombat.class)",
+			answerType: "exact",
+			topic: "greenfoot removing enemy",
+			caseSensitive: true,
+		},
+		{
+			question: 'How can you create a sound variable called "mySound" from the sound file "sound.wav" in Greenfoot?',
+			answer: 'GreenfootSound mySound = new GreenfootSound("sound.wav")',
+			answerType: "exact",
+			topic: "greenfoot sound",
+			extraTime: 0.5, // half speed
+			caseSensitive: true,
+		},
+		{
+			question: 'How can you play the sound at the variable "mySound" in Greenfoot?',
+			answer: "mySound.play()",
+			answerType: "exact",
+			topic: "greenfoot sound",
+			caseSensitive: true,
+		},
+		{
+			question: 'How can you get the world of class "WombatWorld" in Greenfoot and save it to a variable called "world"?',
+			answer: "WombatWorld world = getWorldOfType(WombatWorld.class)",
+			answerType: "exact",
+			topic: "greenfoot counter and inheritance",
+			extraTime: 0.5, // half speed
+			caseSensitive: true,
+		},
+		{
+			question: "How can you create a variable of class 'Counter' called 'myCounter'?",
+			answer: "Counter myCounter = new Counter()",
+			answerType: "exact",
+			topic: "greenfoot counter and inheritance",
+			caseSensitive: true,
+		},
+		{
+			question: 'How can you set the image of an actor, where:<ul><li>The text is "hello world"</li><li>The font size is 30</li><li>The text colour is white</li><li>The background colour is blue</li></ul>',
+			answer: 'setImage(new GreenfootImage("hello world", 30, java.awt.Color.WHITE, java.awt.Color.BLUE))',
+			answerType: "exact",
+			topic: "greenfoot counter and inheritance",
+			extraTime: 0.25, // quarter speed
+			caseSensitive: true,
+		},
+		{
+			question: 'Given the world variable "world", how can you call the world function "getCounter"?',
+			answer: "world.getCounter()",
+			answerType: "exact",
+			topic: "greenfoot counter and inheritance",
+			caseSensitive: true,
+		},
+		{
+			question: 'Given the Counter variable "counter", how can you call the Counter function "increment" with the parameter 1?',
+			answer: "counter.increment(1)",
+			answerType: "exact",
+			topic: "greenfoot counter and inheritance",
+			caseSensitive: true,
 		},
 	],
 };
