@@ -35,7 +35,7 @@ var data  = {
 		},
 		{
 			question: "Why are embedded systems used? <i>more answers give you more points</i>",
-			answer: [["size", "small"], ["cost", "cheap"], "automatic", "function"],
+			answer: [["size", "small"], ["cost", "cheap", "price"], "automatic", "function"],
 			answerType: "match",
 			required: 1,
 			topic: "embedded systems",
@@ -239,7 +239,7 @@ var data  = {
 		},
 		{
 			question: "Which factors must be considered when choosing a suitable secondary storage device? <i>more answers give you more points</i>",
-			answer: ["capacity","speed","portability","durability","reliability","cost"],
+			answer: [["capacity", "size"], "speed", ["portability", "portable"], ["durability", "durable"], ["reliability", "reliable"], ["cost", "price"]],
 			answerType: "match",
 			required: 1,
 			topic: "storage devices",
