@@ -116,7 +116,7 @@ function pickQuestion () {
 	questionTopic = topics[randomNum(topics.length)];
 	
 	// chance of giving a boolean logic question instead of a pre-written question
-	if (questionTopic == "logic" && randomNum(2) == 0) {
+	if (questionTopic == "logic" && randomNum(2) === 0) {
 		let booleanLogic = booleanQuestion(4);
 		document.getElementById("question").innerHTML = "Evaluate: " + booleanLogic.question + "<br><h5><img src='./assets/danger.png' height=30px>  Question is sudden death - get it wrong and you're out!</h5>";
 		questionNumber = "exact" + booleanLogic.answer;
@@ -124,9 +124,9 @@ function pickQuestion () {
 		suddenDeath = true; // boolean logic questions are all sudden death
 	}
 	
-	// data questions are special...
-	else if (questionTopic == "data") {
-		let random = randomNum(8); // number of possible data question types (outside of prewritten questions)
+	// 5 in 8 chance of giving a data question instead of a pre-written question
+	else if (questionTopic == "data" && randomNum(9) < 6) {
+		let random = randomNum(6); // number of possible data question types (outside of prewritten questions)
 		let foo;
 		let question;
 		let answer;
@@ -174,23 +174,6 @@ function pickQuestion () {
 				questionSubtopic = "binary shift";
 				suddenDeath = true;
 				break;
-			default: // questions (currently twice as likely to appear)
-				answer = randomNum(questions[questionTopic].length); // question number
-				question = questions[questionTopic][answer].question;
-				questionSubtopic = questions[questionTopic][answer].topic;
-				if (questions[questionTopic][questionNumber].suddenDeath === true) {
-					// sudden death question
-					suddenDeath = true;
-					document.getElementById("question").innerHTML += "<br><h5><img src='./assets/danger.png' height=30px>  Question is sudden death - get it wrong and you're out!</h5>"
-				}
-				else {
-					suddenDeath = false;
-				}
-		
-				// extra time
-				if (questions[questionTopic][questionNumber].extraTime !== undefined) {
-					rocket.speed *= questions[questionTopic][questionNumber].extraTime;
-				}
 		}
 		
 		document.getElementById("question").innerHTML = question;
@@ -439,13 +422,42 @@ function verifyAnswer() {
 		let correct = false;
 		if (questions[questionTopic][questionNumber].caseSensitive === true) {
 			// case sensitive
-			if (document.getElementById("answer").value == questions[questionTopic][questionNumber].answer) { // correct
-				correct = true;
+			
+			if (questions[questionTopic][questionNumber].answer.constructor === Array) {
+				// multiple accepted answers
+				
+				for (let i = 0; i < questions[questionTopic][questionNumber].answer.length; i++) {
+					if (document.getElementById("answer").value == questions[questionTopic][questionNumber].answer[i]) { // correct
+						correct = true;
+					}
+				}
+			}
+			
+			else {
+				// single accepted answer
+				if (document.getElementById("answer").value == questions[questionTopic][questionNumber].answer) { // correct
+					correct = true;
+				}
 			}
 		}
 		else {
-			if (document.getElementById("answer").value.toLowerCase() == questions[questionTopic][questionNumber].answer.toLowerCase()) { // correct
-				correct = true;
+			// not case sensitive
+			
+			if (questions[questionTopic][questionNumber].answer.constructor === Array) {
+				// multiple accepted answers
+				
+				for (let i = 0; i < questions[questionTopic][questionNumber].answer.length; i++) {
+					if (document.getElementById("answer").value.toLowerCase() == questions[questionTopic][questionNumber].answer[i].toLowerCase()) { // correct
+						correct = true;
+					}
+				}
+			}
+			
+			else {
+				// single accepted answer
+				if (document.getElementById("answer").value.toLowerCase() == questions[questionTopic][questionNumber].answer.toLowerCase()) { // correct
+					correct = true;
+				}
 			}
 		}
 		
@@ -603,6 +615,9 @@ function displayAnswer() {
 	// exact answer
 	else if (questions[questionTopic][questionNumber].answerType == "exact") {
 		questionNumber = questions[questionTopic][questionNumber].answer;
+		if (answer.constructor === Array) {
+			questionNumber = questionNumber[0]; // if there are multiple variants of the same answer, only display the first
+		}
 		correctAnswer = "The correct answer was: " + '"' + questionNumber + '"';
 	}
 	

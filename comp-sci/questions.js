@@ -5,7 +5,7 @@
 // match question: user must enter the answer word within their answer - answer must be an array
 // required: number of keywords required for match question (any over this they are given extra points for)
 
-var topics = ["hardware", "logic", "communication", "data", "software", "misc", "security", "impacts", "html", "greenfoot"];
+var topics = ["hardware", "logic", "communication", "data", "software", "misc", "security", "impacts", "html", "greenfoot", "assembly"];
 
 var data  = {
 	hardware: [
@@ -61,25 +61,25 @@ var data  = {
 			topic: "risc and cisc",
 		},
 		{
-			question: "What are the <strong>two</strong> parts of an instruction in assembly code?",
+			question: "What are the <strong>two</strong> parts of an instruction in assembly language?",
 			answer: ["opcode","operand"],
 			answerType: "match",
 			required: 2,
-			topic: "assembly code",
+			topic: "assembly language",
 		},
 		{
 			question: "Which part of an instruction, <strong>opcode or operand</strong>, is the instruction to be carried out by the CPU?",
 			answer: "opcode",
 			answerType: "exact",
 			suddenDeath: true,
-			topic: "assembly code",
+			topic: "assembly language",
 		},
 		{
 			question: "Which part of an instruction, <strong>opcode or operand</strong>, is the data to be executed by the instruction?",
 			answer: "operand",
 			answerType: "exact",
 			suddenDeath: true,
-			topic: "assembly code",
+			topic: "assembly language",
 		},
 		{
 			question: "What are the <strong>three</strong> parts of a CPU cycle?",
@@ -272,13 +272,13 @@ var data  = {
 		},
 		{
 			question: "How many bytes in a kB?",
-			answer: "1024",
+			answer: ["1000", "1024"],
 			answerType: "exact",
 			topic: "storage units",
 		},
 		{
 			question: "How many kB in a MB?",
-			answer: "1024",
+			answer: ["1000", "1024"],
 			answerType: "exact",
 			topic: "storage units",
 		},
@@ -357,6 +357,20 @@ var data  = {
 			answerType: "match",
 			required: 1,
 			topic: "misc hardware",
+		},
+		{
+			question: "List a positive of cloud storage. <i>more answers give you more points</i>",
+			answer: ["backup", "access", ["cost", "price"]],
+			answerType: "match",
+			required: 1,
+			topic: "cloud storage",
+		},
+		{
+			question: "List a negative of cloud storage. <i>more answers give you more points</i>",
+			answer: ["internet", "security", "reliant"],
+			answerType: "match",
+			required: 1,
+			topic: "cloud storage",
 		},
 	],
 	logic: [
@@ -622,7 +636,7 @@ var data  = {
 		},
 		{
 			question: "What does NIC stand for?",
-			answer: "network interface controller",
+			answer: ["network interface controller", "network interface card"],
 			answerType: "exact",
 			topic: "wired and wireless",
 		},
@@ -2133,6 +2147,72 @@ var data  = {
 			answer: "counter.increment(1)",
 			answerType: "exact",
 			topic: "greenfoot counter and inheritance",
+			caseSensitive: true,
+		},
+	],
+	assembly: [
+		// component 2
+		{
+			question: "Which assembly language mnemonic inputs a value and stores it in the accumulator?",
+			answer: "INP",
+			answerType: "exact",
+			topic: "assembly language",
+			caseSensitive: true,
+		},
+		{
+			question: "Which assembly language mnemonic displays the contents of the accumulator?",
+			answer: "OUT",
+			answerType: "exact",
+			topic: "assembly language",
+			caseSensitive: true,
+		},
+		{
+			question: "Which assembly language mnemonic transfers a number from the accumulator to a RAM address?",
+			answer: "STA",
+			answerType: "exact",
+			topic: "assembly language",
+			caseSensitive: true,
+		},
+		{
+			question: "Which assembly language mnemonic transfers a number from a RAM address to the accumulator?",
+			answer: "LDA",
+			answerType: "exact",
+			topic: "assembly language",
+			caseSensitive: true,
+		},
+		{
+			question: "Which assembly language mnemonic adds the contents of the accumulator to the contents of a RAM address?",
+			answer: "ADD",
+			answerType: "exact",
+			topic: "assembly language",
+			caseSensitive: true,
+		},
+		{
+			question: "Which assembly language mnemonic subtracts the contents of the accumulator from the contents of a RAM address?",
+			answer: "SUB",
+			answerType: "exact",
+			topic: "assembly language",
+			caseSensitive: true,
+		},
+		{
+			question: "Which assembly language mnemonic jumps to the specified RAM location (is used for loops)?",
+			answer: "BRA",
+			answerType: "exact",
+			topic: "assembly language",
+			caseSensitive: true,
+		},
+		{
+			question: "Which assembly language mnemonic stops the processor?",
+			answer: "HLT",
+			answerType: "exact",
+			topic: "assembly language",
+			caseSensitive: true,
+		},
+		{
+			question: "Which assembly language mnemonic defines a variable (used at the end of the program)? The variable's name is the preceding string.",
+			answer: "DAT",
+			answerType: "exact",
+			topic: "assembly language",
 			caseSensitive: true,
 		},
 	],
