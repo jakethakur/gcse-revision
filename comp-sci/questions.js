@@ -5,7 +5,7 @@
 // match question: user must enter the answer word within their answer - answer must be an array
 // required: number of keywords required for match question (any over this they are given extra points for)
 
-var topics = ["hardware", "logic", "communication", "data", "software", "misc", "security", "impacts", "html", "greenfoot", "assembly"];
+var topics = ["hardware", "logic", "communication", "data", "software", "misc", "security", "impacts", "html", "greenfoot", "assembly", "algorithms"];
 
 var data  = {
 	hardware: [
@@ -2214,6 +2214,58 @@ var data  = {
 			answerType: "exact",
 			topic: "assembly language",
 			caseSensitive: true,
+		},
+	],
+	algorithms: [
+		// component 2
+		{
+			question: "Which flowchart symbol defines a start/stop of a procedure? <br> A: <img src='./assets/startStop.PNG'> <br> B: <img src='./assets/decision.PNG'> <br> C: <img src='./assets/inputOutput.PNG'> <br> D: <img src='./assets/operation.PNG'> ",
+			answer: "a",
+			answerType: "exact",
+			topic: "flowcharts",
+			suddenDeath: true,
+		},
+		{
+			question: "Which flowchart symbol defines a decision? <br> A: <img src='./assets/connector.PNG'> <br> B: <img src='./assets/flowOfControl.PNG'> <br> C: <img src='./assets/decision.PNG'> <br> D: <img src='./assets/inputOutput.PNG'> ",
+			answer: "c",
+			answerType: "exact",
+			topic: "flowcharts",
+			suddenDeath: true,
+		},
+		{
+			question: "Which flowchart symbol defines an input or output? <br> A: <img src='./assets/flowOfControl.PNG'> <br> B: <img src='./assets/inputOutput.PNG'> <br> C: <img src='./assets/subroutine.PNG'> <br> D: <img src='./assets/operation.PNG'> ",
+			answer: "b",
+			answerType: "exact",
+			topic: "flowcharts",
+			suddenDeath: true,
+		},
+		{
+			question: "Which flowchart symbol defines an operation? <br> A: <img src='./assets/subroutine.PNG'> <br> B: <img src='./assets/startStop.PNG'> <br> C: <img src='./assets/inputOutput.PNG'> <br> D: <img src='./assets/operation.PNG'> ",
+			answer: "d",
+			answerType: "exact",
+			topic: "flowcharts",
+			suddenDeath: true,
+		},
+		{
+			question: "Which flowchart symbol defines a connector? <br> A: <img src='./assets/decision.PNG'> <br> B: <img src='./assets/inputOutput.PNG'> <br> C: <img src='./assets/connector.PNG'> <br> D: <img src='./assets/startStop.PNG'> ",
+			answer: "c",
+			answerType: "exact",
+			topic: "flowcharts",
+			suddenDeath: true,
+		},
+		{
+			question: "Which flowchart symbol defines a store/subroutine call? <br> A: <img src='./assets/operation.PNG'> <br> B: <img src='./assets/connector.PNG'> <br> C: <img src='./assets/subroutine.PNG'> <br> D: <img src='./assets/startStop.PNG'> ",
+			answer: "c",
+			answerType: "exact",
+			topic: "flowcharts",
+			suddenDeath: true,
+		},
+		{
+			question: "Which flowchart symbol shows flow of control? <br> A: <img src='./assets/decision.PNG'> <br> B: <img src='./assets/connector.PNG'> <br> C: <img src='./assets/operation.PNG'> <br> D: <img src='./assets/flowOfControl.PNG'> ",
+			answer: "d",
+			answerType: "exact",
+			topic: "flowcharts",
+			suddenDeath: true,
 		},
 	],
 };
