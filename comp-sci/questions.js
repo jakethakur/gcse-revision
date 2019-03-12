@@ -219,13 +219,13 @@ var data  = {
 			topic: "risc and cisc",
 		},
 		{
-			question: "Which is <strong>not</strong> an <strong>input</strong> device? <br> A: Gyroscope <br> B: Microphone <br> C: External storage <br> D: Hard drive",
+			question: "Which is <strong>not</strong> an <strong>input</strong> device? <br> A: Gyroscope <br> B: Microphone <br> C: Keyboard <br> D: Hard drive",
 			answer: "d",
 			answerType: "exact",
 			topic: "input output",
 		},
 		{
-			question: "Which is <strong>not</strong> an <strong>output</strong> device? <br> A: Monitor <br> B: Gyroscope <br> C: Speaker <br> D: Hard drive",
+			question: "Which is <strong>not</strong> an <strong>output</strong> device? <br> A: Monitor <br> B: Gyroscope <br> C: Speaker <br> D: Laser printer",
 			answer: "b",
 			answerType: "exact",
 			topic: "input output",
@@ -1893,7 +1893,7 @@ var data  = {
 			topic: "legislation",
 		},
 		{
-			question: "List an example of a type of public organisation. <i>more answers give you more points</i>",
+			question: "List an example of a type of public organisation (according to the Freedom of Information Act). <i>more answers give you more points</i>",
 			answer: ["school", "university", "parliament", "council", "police", "government", "nhs", "army"],
 			answerType: "match",
 			required: 1,
