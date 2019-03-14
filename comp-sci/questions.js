@@ -372,6 +372,12 @@ var data  = {
 			required: 1,
 			topic: "cloud storage",
 		},
+		{
+			question: "What is the name given to a storage device that is not under the control of the CPU?",
+			answer: "secondary storage",
+			answerType: "exact",
+			topic: "storage devices",
+		},
 	],
 	logic: [
 	// also includes evaluation of boolean statements
@@ -2267,5 +2273,9 @@ var data  = {
 			topic: "flowcharts",
 			suddenDeath: true,
 		},
+		// subroutines 
+		// global and lcal variables
+		// self documenting identifiers
+		// private public static dynamic
 	],
 };
