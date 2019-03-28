@@ -107,6 +107,7 @@ var data  = {
 			answer: [["arithmetic logic unit", "alu"], "registers", "internal memory", ["control unit", "cu", "controller"]],
 			answerType: "match",
 			required: 4,
+			extraTime: 0.5, // half speed
 			topic: "cpu architecture",
 		},
 		{
@@ -628,7 +629,7 @@ var data  = {
 		},
 		{
 			question: "What is the main cause of errors in wired networks?",
-			answer: ["interference"],
+			answer: ["interference", "packet loss"],
 			answerType: "match",
 			required: 1,
 			topic: "wired and wireless",
@@ -847,7 +848,7 @@ var data  = {
 			topic: "switching",
 		},
 		{
-			question: "Does packet switching or circuit switching ensure the data packets arrive in order at the location?",
+			question: "Which of 'packet switching' or 'circuit switching' ensures the data packets arrive in order at the location?",
 			answer: ["circuit"],
 			answerType: "match",
 			required: 1,
@@ -855,7 +856,7 @@ var data  = {
 			topic: "switching",
 		},
 		{
-			question: "Does packet switching or circuit switching allow multiple packets to be sent over the network at the same time?",
+			question: "Which of 'packet switching' or 'circuit switching' allows multiple packets to be sent over the network at the same time?",
 			answer: ["packet"],
 			answerType: "match",
 			required: 1,
@@ -863,7 +864,7 @@ var data  = {
 			topic: "switching",
 		},
 		{
-			question: "Does packet switching or circuit switching still work if a computer on the network fails?",
+			question: "Which of 'packet switching' or 'circuit switching' switching still works if a computer on the network fails?",
 			answer: ["packet"],
 			answerType: "match",
 			required: 1,
@@ -878,7 +879,7 @@ var data  = {
 			topic: "routing",
 		},
 		{
-			question: "Does dynamic routing or static routing allow congested parts of the network to be avoided?",
+			question: "Which of 'dynamic routing' or 'static routing' allows congested parts of the network to be avoided?",
 			answer: ["dynamic"],
 			answerType: "match",
 			required: 1,
@@ -886,7 +887,7 @@ var data  = {
 			topic: "routing",
 		},
 		{
-			question: "Is dynamic routing or static routing more straightforward to implement?",
+			question: "Which of 'dynamic routing' or 'static routing' is more straightforward to implement?",
 			answer: ["static"],
 			answerType: "match",
 			required: 1,
@@ -894,7 +895,7 @@ var data  = {
 			topic: "routing",
 		},
 		{
-			question: "Does dynamic routing or static routing involve data packets taking different routes rather than following a pre-set path?",
+			question: "Which of 'dynamic routing' or 'static routing' involves data packets taking different routes rather than following a pre-set path?",
 			answer: ["dynamic"],
 			answerType: "match",
 			required: 1,
@@ -1173,7 +1174,7 @@ var data  = {
 		},
 		{
 			question: "Which type of system software: <ul><li>Helps to manage, maintain, and control the computer's resources</li></ul>",
-			answer: "utility software",
+			answer: ["utility software", "utility"],
 			answerType: "exact",
 			topic: "misc software",
 		},
@@ -1310,7 +1311,7 @@ var data  = {
 		},
 		{
 			question: "List a benefit of high-level languages. <i>more answers give you more points</i>",
-			answer: ["read", "productivity", "learn", "maintain"],
+			answer: ["read", "productivity", "learn", "maintain", "understand", "write"],
 			answerType: "match",
 			required: 1,
 			topic: "programming languages",
@@ -1711,7 +1712,7 @@ var data  = {
 		},
 		{
 			question: "List a form of cyberattack. <i>more answers give you more points</i>",
-			answer: ["shoulder surfing", "sql injection", "dos attack", "ddos attack", ["ip address spoofing", "ip spoofing"], "password", "buffer overflow attack"],
+			answer: [["shoulder surfing", "shoulder-surfing"], "sql injection", "dos attack", "ddos attack", ["ip address spoofing", "ip spoofing"], "password", "buffer overflow attack"],
 			answerType: "match",
 			required: 1,
 			topic: "cyberattack",
@@ -1795,7 +1796,7 @@ var data  = {
 		},
 		{
 			question: "List an ethical impact of technology. <i>more answers give you more points</i>",
-			answer: ["privacy", "cybersecurity", "hacking", "access", "equality"],
+			answer: ["privacy", ["cybersecurity", "security"], ["hacking", "hacker"], "access", "equality"],
 			answerType: "match",
 			required: 1,
 			topic: "ethical impacts",
