@@ -9,7 +9,7 @@ function populateDocument() {
 		data[topic].forEach(q => {
 			// iterate through questions
 			el.innerHTML += "<p>" + q.question + "</p>";
-			el.innerHTML += "<p>Answer: " + displayAnswer(q.answer) + "</p><br>";
+			displayAnswer(q.answer, el);
 		});
 		
 		el.innerHTML += "<br><br>";
@@ -17,7 +17,7 @@ function populateDocument() {
 	});
 }
 
-function displayAnswer(ansList) {
+function displayAnswer(ansList, el) {
 	let output = "";
 	if (Array.isArray(ansList)) {
 		ansList.forEach((ans, i) => {
@@ -41,7 +41,10 @@ function displayAnswer(ansList) {
 	
 	// check for HTML
 	if (output[0] === "<" && output[output.length - 1] === ">") {
-		// TBD
+		el.innerHTML += "<p>Answer: <xmp>" + output + "</xmp></p><br>";
+	}
+	else {
+		el.innerHTML += "<p>Answer: " + output + "</p><br>";
 	}
 	
 	return output;

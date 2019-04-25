@@ -5,7 +5,7 @@
 // match question: user must enter the answer word within their answer - answer must be an array
 // required: number of keywords required for match question (any over this they are given extra points for)
 
-var topics = ["hardware", "logic", "communication", "data", "software", "misc", "security", "impacts", "html", "greenfoot", "assembly", "algorithms"];
+var topics = ["hardware", "logic", "communication", "data", "software", "misc", "security", "impacts", "misc2", "html", "greenfoot", "assembly", "algorithms"];
 
 var data  = {
 	hardware: [
@@ -2079,6 +2079,128 @@ var data  = {
 			topic: "environmental impacts",
 		},
 	],
+	misc2: [
+		{
+			question: "What is the name given to breaking a large problem down into a series of sub problems?",
+			answer: "decomposition",
+			answerType: "exact",
+			topic: "problem solving",
+		},
+		{
+			question: "What is the name given to reducing something to the simplest set of characteristics that are most relevant to solving the problem?",
+			answer: "abstraction",
+			answerType: "exact",
+			topic: "problem solving",
+		},
+		{
+			question: "List a type of sub routine. <i>more answers give you more points</i>",
+			answer: ["procedure", "function", "method"],
+			answerType: "match",
+			required: 1,
+			topic: "sub routines",
+		},
+		{
+			question: "Which type of sub routine does not return a value?",
+			answer: "procedure",
+			answerType: "exact",
+			topic: "sub routines",
+		},
+		{
+			question: "Which type of sub routine returns a value?",
+			answer: "function",
+			answerType: "exact",
+			topic: "sub routines",
+		},
+		{
+			question: "List a positive of using sub routines. <i>more answers give you more points</i>",
+			answer: ["decompose", "reuse", ["readable", "readability"], "duplicate"],
+			answerType: "match",
+			required: 1,
+			topic: "sub routines",
+		},
+		{
+			question: "What are the <strong>three</strong> basic constructs used to design algorithms?",
+			answer: ["sequence", "selection", "iteration"],
+			answerType: "match",
+			required: 3,
+			topic: "sequence selection iteration",
+		},
+		{
+			question: "Which programming construct involves instructions being given in a particular order?",
+			answer: "sequence",
+			answerType: "exact",
+			topic: "sequence selection iteration",
+		},
+		{
+			question: "Which programming construct involves a decision being made?",
+			answer: "selection",
+			answerType: "exact",
+			topic: "sequence selection iteration",
+		},
+		{
+			question: "Which programming construct involves a set of steps being carried out more than once or many times?",
+			answer: "iteration",
+			answerType: "exact",
+			topic: "sequence selection iteration",
+		},
+		{
+			question: "Which programming construct involves a set of steps being carried out more than once or many times?",
+			answer: "iteration",
+			answerType: "exact",
+			topic: "sequence selection iteration",
+		},
+		{
+			question: "What type of value records the number of times a process is carried out, terminating the loop when it reaches a certain value?",
+			answer: "count",
+			answerType: "exact",
+			topic: "count and rogue values",
+		},
+		{
+			question: "What type of value is used as a condition of termination, and is set to a special value to terminate the loop?",
+			answer: "rogue",
+			answerType: "exact",
+			topic: "count and rogue values",
+		},
+		{
+			question: "Fill in the gap: input, _____, output",
+			answer: "processing",
+			answerType: "exact",
+			topic: "input processing output",
+		},
+		{
+			question: "Fill in the gap: _____, processing, output",
+			answer: "input",
+			answerType: "exact",
+			topic: "input processing output",
+		},
+		{
+			question: "Fill in the gap: input, processing, _____",
+			answer: "output",
+			answerType: "exact",
+			topic: "input processing output",
+		},
+		{
+			question: "Fill in the gap: input, processing, _____",
+			answer: "output",
+			answerType: "exact",
+			topic: "input processing output",
+		},
+		{
+			question: "What is the object oriented construct that inherits from a superclass?",
+			answer: "subclass",
+			answerType: "exact",
+			topic: "object oriented programming",
+		},
+		{
+			question: "What is the object oriented construct that a subclass inherits from?",
+			answer: "superclass",
+			answerType: "exact",
+			topic: "object oriented programming",
+		},
+		// global and local variables
+		// self documenting identifiers and notation
+		// private public static dynamic
+	],
 	html: [
 		// component 2
 		{
@@ -2260,7 +2382,7 @@ var data  = {
 		},
 		{
 			question: 'How can you get the world of class "WombatWorld" in Greenfoot and save it to a variable called "world"?',
-			answer: "WombatWorld world = getWorldOfType(WombatWorld.class)",
+			answer: "WombatWorld world = (WombatWorld)getWorld()",
 			answerType: "exact",
 			topic: "greenfoot counter and inheritance",
 			extraTime: 0.5, // half speed
@@ -2413,9 +2535,5 @@ var data  = {
 			topic: "flowcharts",
 			suddenDeath: true,
 		},
-		// subroutines 
-		// global and lcal variables
-		// self documenting identifiers
-		// private public static dynamic
 	],
 };
