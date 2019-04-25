@@ -115,7 +115,7 @@ function pickQuestion () {
 	// select random topic
 	questionTopic = topics[randomNum(topics.length)];
 	
-	// chance of giving a boolean logic question instead of a pre-written question
+	// 1 in 2 chance of giving a boolean logic question instead of a pre-written question
 	if (questionTopic == "logic" && randomNum(2) === 0) {
 		let booleanLogic = booleanQuestion(4);
 		document.getElementById("question").innerHTML = "Evaluate: " + booleanLogic.question + "<br><h5><img src='./assets/danger.png' height=30px>  Question is sudden death - get it wrong and you're out!</h5>";

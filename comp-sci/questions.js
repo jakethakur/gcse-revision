@@ -393,25 +393,25 @@ var data  = {
 			question: "Which logic gate is represented by: <img src='./assets/and.png'>? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
 			answer: "a",
 			answerType: "exact",
-			topic: "logic gates",
+			topic: "logic gate diagrams",
 		},
 		{
 			question: "Which logic gate is represented by: <img src='./assets/or.png'>? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
 			answer: "b",
 			answerType: "exact",
-			topic: "logic gates",
+			topic: "logic gate diagrams",
 		},
 		{
 			question: "Which logic gate is represented by: <img src='./assets/not.png'>? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
 			answer: "c",
 			answerType: "exact",
-			topic: "logic gates",
+			topic: "logic gate diagrams",
 		},
 		{
 			question: "Which logic gate is represented by: <img src='./assets/xor.png'>? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
 			answer: "d",
 			answerType: "exact",
-			topic: "logic gates",
+			topic: "logic gate diagrams",
 		},
 		{
 			question: "Which logic gate has an output of 1 only if all its inputs are 1? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
@@ -441,15 +441,134 @@ var data  = {
 			question: "What does the symbol + mean in logical operations? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
 			answer: "b",
 			answerType: "exact",
-			topic: "logic gates",
+			topic: "logic gate symbols",
 		},
 		{
 			question: "What does the symbol . mean in logical operations? <br> A: AND <br> B: OR <br> C: NOT <br> D: XOR",
 			answer: "a",
 			answerType: "exact",
-			topic: "logic gates",
+			topic: "logic gate symbols",
 		},
-		// tbd: truth tables, simplify, simplification rules, simplify this with + and .
+		{
+			question: "What does this mean in logical operations? <img src='./assets/notSymbol.png'><br> A: AND A <br> B: OR A <br> C: NOT A <br> D: XOR A",
+			answer: "c",
+			answerType: "exact",
+			topic: "logic gate symbols",
+		},
+		{
+			question: "What does this mean in logical operations? <img src='./assets/xorSymbol.png'><br> A: A AND B <br> B: A OR B <br> C: A NAND B <br> D: A XOR B",
+			answer: "d",
+			answerType: "exact",
+			topic: "logic gate symbols",
+		},
+		{
+			question: "What law is 'A . 0 = 0'? <br> A: Complement <br> B: Annulment <br> C: Absorptive <br> D: Idempotent",
+			answer: "b",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'A + 1 = 1'? <br> A: Absorptive <br> B: Identity <br> C: Commutative <br> D: Annulment",
+			answer: "d",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'A + 0 = A'? <br> A: Identity <br> B: Idempotent <br> C: Annulment <br> D: Complement",
+			answer: "a",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'A . 1 = A'? <br> A: Idempotent <br> B: Annulment <br> C: Identity <br> D: Commutative",
+			answer: "c",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'A + A = A'? <br> A: Idempotent <br> B: Distributive <br> C: Associative <br> D: Absorptive",
+			answer: "a",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'A . A = A'? <br> A: Complement <br> B: Double Complement <br> C: Distributive <br> D: Idempotent",
+			answer: "d",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'A . Ā = 0'? <br> A: Double Complement <br> B: Annulment <br> C: Commutative <br> D: Complement",
+			answer: "d",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'A + Ā = 1'? <br> A: Idempotent <br> B: Complement <br> C: Double Complement <br> D: Identity",
+			answer: "b",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'A.B = B.A'? <br> A: Associative <br> B: Complement <br> C: Commutative <br> D: Distributive",
+			answer: "c",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'A + B = B + A'? <br> A: Commutative <br> B: Annulment <br> C: Complement <br> D: Double Complement",
+			answer: "a",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'NOT NOT A = A'? <br> A: Annulment <br> B: Complement <br> C: Double Complement <br> D: Identity",
+			answer: "c",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'A(B + C) = A.B + A.C'? <br> A: Commutative <br> B: Distributive <br> C: Double Complement <br> D: Associative",
+			answer: "b",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'A + (B.C) = (A + B).(A + C)'? <br> A: Distributive <br> B: Identity <br> C: Complement <br> D: Commutative",
+			answer: "a",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'A + (A.B) = A'? <br> A: Complement <br> B: Associative <br> C: Identity <br> D: Absorptive",
+			answer: "d",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'A(A + B) = A'? <br> A: Idempotent <br> B: Complement <br> C: Absorptive <br> D: De Morgan's",
+			answer: "c",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'A + (B + C) = (A + B) + C = A + B + C'? <br> A: Associative <br> B: Distributive <br> C: De Morgan's <br> D: Complement",
+			answer: "a",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'A(B.C) = (A.B)C = A.B.C'? <br> A: De Morgan's <br> B: Associative <br> C: Distributive <br> D: Absorptive",
+			answer: "b",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
+		{
+			question: "What law is 'NOT(A+B) = NOT A . NOT B'? <br> A: Distributive <br> B: Double Complement <br> C: De Morgan's <br> D: Associative",
+			answer: "c",
+			answerType: "exact",
+			topic: "boolean algebra laws",
+		},
 	],
 	communication: [
 		{
@@ -608,7 +727,7 @@ var data  = {
 		},
 		{
 			question: "List a method to connect devices in a wired network. <i>more answers give you more points</i>",
-			answer: ["coaxial", "twisted pair", ["fibre optic", "fibre-optic"]],
+			answer: ["coaxial", "twisted pair", ["fibre optic", "fibre-optic"], "copper wire"],
 			answerType: "match",
 			required: 1,
 			topic: "wired and wireless",
@@ -622,7 +741,7 @@ var data  = {
 		},
 		{
 			question: "Which type of transmission media is most commonly used in ethernet?",
-			answer: ["coaxial"],
+			answer: ["twisted pair"],
 			answerType: "match",
 			required: 1,
 			topic: "wired and wireless",
@@ -864,8 +983,24 @@ var data  = {
 			topic: "switching",
 		},
 		{
-			question: "Which of 'packet switching' or 'circuit switching' switching still works if a computer on the network fails?",
+			question: "Which of 'packet switching' or 'circuit switching' still works if a computer on the network fails?",
 			answer: ["packet"],
+			answerType: "match",
+			required: 1,
+			suddenDeath: true,
+			topic: "switching",
+		},
+		{
+			question: "Which of 'packet switching' or 'circuit switching' is used for a landline phone system?",
+			answer: ["circuit"],
+			answerType: "match",
+			required: 1,
+			suddenDeath: true,
+			topic: "switching",
+		},
+		{
+			question: "Which of 'packet switching' or 'circuit switching' establishes a dedicated link between the start and end node?",
+			answer: ["circuit"],
 			answerType: "match",
 			required: 1,
 			suddenDeath: true,
@@ -900,6 +1035,12 @@ var data  = {
 			answerType: "match",
 			required: 1,
 			suddenDeath: true,
+			topic: "routing",
+		},
+		{
+			question: "What stores the routing cost for each route (as laid out by the network administrator) and is used to determine the route that should be taken by data packets?",
+			answer: "routing table",
+			answerType: "exact",
 			topic: "routing",
 		},
 		{
@@ -952,11 +1093,9 @@ var data  = {
 			answerType: "exact",
 			topic: "internet",
 		},
-		// tbd: network topologies, wired and wireless, network types
 	],
 	data: [
-	// also includes hex, binary, denary conversion, addition of binary
-	// tbd: binary shift
+	// also includes hex, binary, denary conversion, addition of binary, binary shift
 		{
 			question: "What error is given when the total from adding binary numbers cannot be stored within a byte of data? <br> A: Logical error <br> B: Overflow error <br> C: Stack error <br> D: Binary error",
 			answer: "b",
