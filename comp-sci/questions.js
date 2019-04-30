@@ -2080,6 +2080,7 @@ var data  = {
 		},
 	],
 	misc2: [
+		// component 2
 		{
 			question: "What is the name given to breaking a large problem down into a series of sub problems?",
 			answer: "decomposition",
@@ -2197,7 +2198,91 @@ var data  = {
 			answerType: "exact",
 			topic: "object oriented programming",
 		},
-		// global and local variables
+		{
+			question: "What is the object oriented construct that is used as a 'plan' or 'template' for creating objects in a progam?",
+			answer: "class",
+			answerType: "exact",
+			topic: "object oriented programming",
+		},
+		{
+			question: "What is another word for a 'class instance'?",
+			answer: "object",
+			answerType: "exact",
+			topic: "object oriented programming",
+		},
+		{
+			question: "What is the name given to a procedure associated with an object?",
+			answer: "method",
+			answerType: "exact",
+			topic: "object oriented programming",
+		},
+		{
+			question: "What is the name given to a variable that is bound to an object?",
+			answer: "instance variable",
+			answerType: "exact",
+			topic: "object oriented programming",
+		},
+		{
+			question: "What is the object oriented construct that involves wrapping variables and methods inside a class?",
+			answer: "encapsulation",
+			answerType: "exact",
+			topic: "object oriented programming",
+		},
+		{
+			question: "What is the object oriented construct that involves hiding non-essential features (as private variables) and showing essential features?",
+			answer: "abstraction",
+			answerType: "exact",
+			topic: "object oriented programming",
+		},
+		{
+			question: "What is the object oriented construct that allows a class to use properties and methods of an existing class?",
+			answer: "inheritance",
+			answerType: "exact",
+			topic: "object oriented programming",
+		},
+		{
+			question: "What is the object oriented construct that allows methods to act differently based on the object performing the action?",
+			answer: "polymorphism",
+			answerType: "exact",
+			topic: "object oriented programming",
+		},
+		{
+			question: "What type of variable is definted within a sub routine and is hence only accessable from within that same sub routine?",
+			answer: "local",
+			answerType: "exact",
+			topic: "local and global variables",
+		},
+		{
+			question: "What type of variable is defined globally and is hence accessable from anywhere within a program?",
+			answer: "global",
+			answerType: "exact",
+			topic: "local and global variables",
+		},
+		{
+			question: "What type of variable is defined globally and is hence accessable from anywhere within a program?",
+			answer: "global",
+			answerType: "exact",
+			topic: "local and global variables",
+		},
+		{
+			question: "What is the name given to where in a program a variable can be accessed?",
+			answer: "scope",
+			answerType: "exact",
+			topic: "local and global variables",
+		},
+		{
+			question: "What is the name given to the identifier (name) of a variable reflecting the data being stored in it?",
+			answer: [["self-documenting", "self documenting"]],
+			answerType: "match",
+			required: 1,
+			topic: "self-documenting identifiers and annotation",
+		},
+		{
+			question: "What is the name given to adding comments to a program based on what is being done?",
+			answer: "annotation",
+			answerType: "exact",
+			topic: "self-documenting identifiers and annotation",
+		},
 		// self documenting identifiers and notation
 		// private public static dynamic
 	],
@@ -2534,6 +2619,61 @@ var data  = {
 			answerType: "exact",
 			topic: "flowcharts",
 			suddenDeath: true,
+		},
+		{
+			question: "True or false: arrays start at 1 in pseudocode.",
+			answer: "true",
+			answerType: "exact",
+			topic: "pseudocode",
+			suddenDeath: true,
+		},
+		{
+			question: "How can a string variable be defined in pseudocode? Let the variable's name be 'myVariable'.",
+			answer: "myVariable is string",
+			answerType: "exact",
+			topic: "pseudocode",
+		},
+		{
+			question: "How can a for loop be initiated in pseudocode? Let the count variable name be 'i', and be iterated from 1 to 30.",
+			answer: "for i = 1 to 30",
+			answerType: "exact",
+			topic: "pseudocode",
+		},
+		{
+			question: "How can a for loop be ended in pseudocode? Let the count variable name be 'i'.",
+			answer: "next i",
+			answerType: "exact",
+			topic: "pseudocode",
+		},
+		{
+			question: "How can an if statement be created in pseudocode? Let the boolean condition we are testing be called 'condition'.",
+			answer: "if condition then",
+			answerType: "exact",
+			topic: "pseudocode",
+		},
+		{
+			question: "How can an if statement be terminated in pseudocode?",
+			answer: "end if",
+			answerType: "exact",
+			topic: "pseudocode",
+		},
+		{
+			question: "How can an input be taken to the variable 'userInput' in pseudocode?",
+			answer: "input userInput",
+			answerType: "exact",
+			topic: "pseudocode",
+		},
+		{
+			question: "How can an output from the variable 'variableOutput' be given in pseudocode?",
+			answer: "output variableOutput",
+			answerType: "exact",
+			topic: "pseudocode",
+		},
+		{
+			question: "How can the length of a string be found in pseudocode? Let the variable's name be 'myVariable'.",
+			answer: "len(myVariable)",
+			answerType: "exact",
+			topic: "pseudocode string handling",
 		},
 	],
 };
