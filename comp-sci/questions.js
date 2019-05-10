@@ -368,7 +368,7 @@ var data  = {
 		},
 		{
 			question: "List a negative of cloud storage. <i>more answers give you more points</i>",
-			answer: ["internet", "security", "reliant"],
+			answer: ["internet", ["security", "insecure"], ["reliant", "dependent"]],
 			answerType: "match",
 			required: 1,
 			topic: "cloud storage",
@@ -450,13 +450,13 @@ var data  = {
 			topic: "logic gate symbols",
 		},
 		{
-			question: "What does this mean in logical operations? <img src='./assets/notSymbol.png'><br> A: AND A <br> B: OR A <br> C: NOT A <br> D: XOR A",
+			question: "What does this mean in logical operations? <img src='./assets/notSymbol.PNG'><br> A: AND A <br> B: OR A <br> C: NOT A <br> D: XOR A",
 			answer: "c",
 			answerType: "exact",
 			topic: "logic gate symbols",
 		},
 		{
-			question: "What does this mean in logical operations? <img src='./assets/xorSymbol.png'><br> A: A AND B <br> B: A OR B <br> C: A NAND B <br> D: A XOR B",
+			question: "What does this mean in logical operations? <img src='./assets/xorSymbol.PNG'><br> A: A AND B <br> B: A OR B <br> C: A NAND B <br> D: A XOR B",
 			answer: "d",
 			answerType: "exact",
 			topic: "logic gate symbols",
@@ -1095,7 +1095,7 @@ var data  = {
 		},
 	],
 	data: [
-	// also includes hex, binary, denary conversion, addition of binary, binary shift
+		// also includes hex, binary, denary conversion, addition of binary, binary shift
 		{
 			question: "What error is given when the total from adding binary numbers cannot be stored within a byte of data? <br> A: Logical error <br> B: Overflow error <br> C: Stack error <br> D: Binary error",
 			answer: "b",
@@ -1103,7 +1103,21 @@ var data  = {
 			topic: "errors",
 		},
 		{
-			question: "What information does metadata store for <strong>image files</strong>? <i>more answers give you more points</i>",
+			question: "What mathematical operation does a left arithmetic shift apply? <br> A: Addition <br> B: Subtraction <br> C: Multiplication <br> D: Division",
+			answer: "c",
+			answerType: "exact",
+			topic: "binary shift",
+			suddenDeath: true,
+		},
+		{
+			question: "What mathematical operation does a left arithmetic shift apply? <br> A: Addition <br> B: Subtraction <br> C: Multiplication <br> D: Division",
+			answer: "d",
+			answerType: "exact",
+			topic: "binary shift",
+			suddenDeath: true,
+		},
+		{
+			question: "What information does metadata store for <strong>graphics files</strong>? <i>more answers give you more points</i>",
 			answer: ["dimension", "resolution", "compression", "depth", "colour", "author", "time", "date", "creator", "purpose", "size", "source", "quality", "location"],
 			answerType: "match",
 			required: 1,
@@ -1111,7 +1125,7 @@ var data  = {
 		},
 		{
 			question: "What information does metadata store for <strong>sound files</strong>? <i>more answers give you more points</i>",
-			answer: ["resolution", "compression", "sample rate", "sampling rate", "author", "length", "time", "date", "creator", "purpose", "size", "source", "quality", "location"],
+			answer: ["resolution", "compression", ["sample rate", "sampling rate", "sample frequency", "sampling frequency"], "author", "length", "time", "date", "creator", "purpose", "size", "source", "quality", "location"],
 			answerType: "match",
 			required: 1,
 			topic: "metadata",
@@ -1138,17 +1152,54 @@ var data  = {
 		},
 		{
 			question: "Which <strong>three</strong> factors affect file size of a sound file?",
-			answer: ["length", ["sample rate", "sampling rate"], "resolution"],
+			answer: ["length", ["sample rate", "sampling rate", "sample frequency", "sampling frequency"], "resolution"],
 			answerType: "match",
 			required: 3,
 			topic: "sound files",
 		},
 		{
 			question: "Which factors can affect quality of a sound file's playback? <i>more answers give you more points</i>",
-			answer: [["sample rate", "sampling rate"], "resolution"],
+			answer: [["sample rate", "sampling rate", "sample frequency", "sampling frequency"], "resolution"],
 			answerType: "match",
 			required: 1,
 			topic: "sound files",
+		},
+		{
+			question: "Find the file size of a sound file that is 10 seconds long, has a 150Hz sample rate, and has an 8 bit sample resolution. Give your answer in bytes.",
+			answer: "1500",
+			answerType: "exact",
+			topic: "sound files",
+		},
+		{
+			question: "Find the file size of a sound file that is 10 seconds long, has a 100Hz sample rate, and has an 4 bit sample resolution. Give your answer in bits.",
+			answer: "4000",
+			answerType: "exact",
+			topic: "sound files",
+		},
+		{
+			question: "Which <strong>two</strong> factors affect file size of a graphics file?",
+			answer: [["dimensions", "size"], "colour depth"],
+			answerType: "match",
+			required: 2,
+			topic: "graphics files",
+		},
+		{
+			question: "What is the colour depth of an image with 256 possible colours?",
+			answer: 8,
+			answerType: "exact",
+			topic: "graphics files",
+		},
+		{
+			question: "Find the file size of a graphics file that is 100 pixels by 100 pixels, and has a colour depth of 16. Give your answer in bytes.",
+			answer: "20000",
+			answerType: "exact",
+			topic: "graphics files",
+		},
+		{
+			question: "Find the file size of a graphics file that is 400 pixels by 800 pixels, and has a colour depth of 2. Give your answer in kilobytes.",
+			answer: "80",
+			answerType: "exact",
+			topic: "graphics files",
 		},
 		{
 			question: "What data type is '3.4'? <br> A: Integer <br> B: Real <br> C: Boolean <br> D: Character <br> E: String",
@@ -1325,16 +1376,16 @@ var data  = {
 		},
 		{
 			question: "Give a role of the operating system. <i>more answers give you more points</i>",
-			answer: ["user interface", "memory", "multitask", "peripheral", "drivers", "user", "file", "processes"],
+			answer: ["interface", "memory", "multitask", "peripheral", "driver", "user", "file", "processes", "resource"],
 			answerType: "match",
 			required: 1,
 			topic: "operating system",
 		},
 		{
-			question: "<strong>True</strong> or <strong>false</strong>: a computer cannot be used without an operating system.",
-			answer: "true",
-			answerType: "exact",
-			suddenDeath: true,
+			question: "What are the <strong>two</strong> main roles of the operating system?",
+			answer: ["interface", "resource"],
+			answerType: "match",
+			required: 2,
 			topic: "operating system",
 		},
 		{
@@ -1471,7 +1522,7 @@ var data  = {
 		},
 		{
 			question: "List a feature of an IDE. <i>more answers give you more points</i>",
-			answer: ["code editor", "runtime environment", "error diagnostics"],
+			answer: ["code editor", "runtime environment", "error diagnostic"],
 			answerType: "match",
 			required: 1,
 			topic: "IDEs",
@@ -1704,19 +1755,6 @@ var data  = {
 			answerType: "exact",
 			topic: "compression",
 		},
-		// maybe make a function for the following 2?
-		{
-			question: "Find the file size of a sound file that is 10 seconds long, has a 150Hz sample rate, and has an 8 bit sample resolution. Give your answer in bytes.",
-			answer: "1500",
-			answerType: "exact",
-			topic: "sound files",
-		},
-		{
-			question: "Find the file size of a sound file that is 10 seconds long, has a 100Hz sample rate, and has an 4 bit sample resolution. Give your answer in bits.",
-			answer: "4000",
-			answerType: "exact",
-			topic: "sound files",
-		},
 		{
 			question: "What is a positive of a lossless file format?",
 			answer: ["quality", ["no data lost", "don't lose data"]],
@@ -1920,7 +1958,7 @@ var data  = {
 		},
 		{
 			question: "List a role of Internet cookies. <i>more answers give you more points</i>",
-			answer: ["preference", "advert", "login", "information"],
+			answer: ["preference", "advert", "login", "information", "remember"],
 			answerType: "match",
 			required: 1,
 			topic: "cookies",
@@ -1942,7 +1980,7 @@ var data  = {
 		},
 		{
 			question: "List a possible cause of loss of privacy due to technology. <i>more answers give you more points</i>",
-			answer: ["monitoring", "interception", "distribution", "theft"],
+			answer: ["monitoring", "interception", "distribution", "theft", "hacking"],
 			answerType: "match",
 			required: 1,
 			topic: "ethical impacts",
@@ -2067,7 +2105,7 @@ var data  = {
 		},
 		{
 			question: "List a positive impact of technology on the environment. <i>more answers give you more points</i>",
-			answer: ["education", "communication", "research"],
+			answer: ["education", "communication", "research", "transport"],
 			answerType: "match",
 			required: 1,
 			topic: "environmental impacts",
