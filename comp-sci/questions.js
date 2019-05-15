@@ -1144,6 +1144,18 @@ var data  = {
 			topic: "character sets",
 		},
 		{
+			question: "What is the name of the character set that is a subset of unicode, and contains 128 codes?",
+			answer: "ascii",
+			answerType: "exact",
+			topic: "character sets",
+		},
+		{
+			question: "What is the name of the character set that is a superset of ascii, and contains up to 2^21 codes?",
+			answer: "unicode",
+			answerType: "exact",
+			topic: "character sets",
+		},
+		{
 			question: "What is the measurement of sampling rate?",
 			answer: ["hertz", "hz"],
 			answerType: "match",
@@ -1363,8 +1375,8 @@ var data  = {
 			topic: "misc software",
 		},
 		{
-			question: "Which type of system software: <ul><li>Helps to manage, maintain, and control the computer's resources</li></ul>",
-			answer: ["utility software", "utility"],
+			question: "Which type of system software is designed to help to analyze, configure, optimize or maintain a computer?",
+			answer: "utility",
 			answerType: "exact",
 			topic: "misc software",
 		},
@@ -1376,7 +1388,7 @@ var data  = {
 		},
 		{
 			question: "Give a role of the operating system. <i>more answers give you more points</i>",
-			answer: ["interface", "memory", "multitask", "peripheral", "driver", "user", "file", "processes", "resource"],
+			answer: ["interface", "memory", "multitask", "peripheral", "driver", "user", "file", "processes", "resource", ["secondary storage", "backing store", "backing storage"]],
 			answerType: "match",
 			required: 1,
 			topic: "operating system",
@@ -1508,7 +1520,7 @@ var data  = {
 		},
 		{
 			question: "List a benefit of low-level languages. <i>more answers give you more points</i>",
-			answer: ["speed", "control"],
+			answer: [["speed", "fast"], "control"],
 			answerType: "match",
 			required: 1,
 			topic: "programming languages",
@@ -1588,7 +1600,7 @@ var data  = {
 			topic: "translators",
 		},
 		{
-			question: "Which type of translator produces an executable file with runs the program?",
+			question: "Which type of translator produces an executable file which runs the program?",
 			answer: "compiler",
 			answerType: "exact",
 			suddenDeath: true,
@@ -1804,7 +1816,7 @@ var data  = {
 			topic: "malware",
 		},
 		{
-			question: "Which type of malware: <ul><li>Infiltrates a computer system and replicates itself</li><li>Requires human involvement to duplicate</li><li>Causes damage by corrupting data or usingup all available memory</li></ul>",
+			question: "Which type of malware: <ul><li>Infiltrates a computer system and replicates itself</li><li>Requires human involvement to duplicate</li><li>Causes damage by corrupting data or using up all available memory</li></ul>",
 			answer: ["virus"],
 			answerType: "match",
 			required: 1,
@@ -2279,13 +2291,13 @@ var data  = {
 			topic: "object oriented programming",
 		},
 		{
-			question: "What type of variable is definted within a sub routine and is hence only accessable from within that same sub routine?",
+			question: "What type of variable is defined within a sub routine and is hence only accessible from within that same sub routine?",
 			answer: "local",
 			answerType: "exact",
 			topic: "local and global variables",
 		},
 		{
-			question: "What type of variable is defined globally and is hence accessable from anywhere within a program?",
+			question: "What type of variable is defined globally and is hence accessible from anywhere within a program?",
 			answer: "global",
 			answerType: "exact",
 			topic: "local and global variables",
@@ -2309,7 +2321,18 @@ var data  = {
 			answerType: "exact",
 			topic: "self-documenting identifiers and annotation",
 		},
-		// private public static dynamic
+		{
+			question: "What type of variable has a lifespan that lasts the entire time that program is running?",
+			answer: "static",
+			answerType: "exact",
+			topic: "static and dynamic variables",
+		},
+		{
+			question: "What type of variable is assigned a new location in memory each time one is defined, and has a lifespan that ends when the sub procedure in which it was defined ends?",
+			answer: "dynamic",
+			answerType: "exact",
+			topic: "static and dynamic variables",
+		},
 	],
 	html: [
 		// component 2
@@ -2743,6 +2766,30 @@ var data  = {
 			answerType: "exact",
 			topic: "pseudocode string handling",
 			caseSensitive: true,
+		},
+		{
+			question: "How can a substring (midstring) be taken of a string in pseudocode? Let the string's name be 'string', the length of the substring be 'length', and the offset index be 'start'.",
+			answer: "mid(string, start, length)",
+			answerType: "exact",
+			topic: "pseudocode string handling",
+			caseSensitive: true,
+			extraTime: 0.75, // more time
+		},
+		{
+			question: "How can all instances of a substring in a string be replaced with something else in pseudocode? Let the string's name be 'string', the thing to be replaced be 'replace', and the thing for it to be replaced with be 'new'.",
+			answer: "Replace(string, replace, new)",
+			answerType: "exact",
+			topic: "pseudocode string handling",
+			caseSensitive: true,
+			extraTime: 0.75, // more time
+		},
+		{
+			question: "How can two strings be compared in pseudocode? Let the strings' names be 'str1' and 'str2'.",
+			answer: "strComp(str1, str2)",
+			answerType: "exact",
+			topic: "pseudocode string handling",
+			caseSensitive: true,
+			extraTime: 0.75, // more time
 		},
 	],
 };
